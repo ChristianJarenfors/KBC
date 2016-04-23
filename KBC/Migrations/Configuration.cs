@@ -50,7 +50,7 @@ namespace KBC.Migrations
                 {
                     Name = "How I met your mother",
                     ReleaseDatum = new DateTime(2005, 5, 24),
-                    GenreIds = new List<int>() { 5, 6, 7, 8 },
+                    GenreIds = new List<int>() { 4, 5, 6, 7, 8 },
                     Description = "How I Met Your Mother is a comedy about Ted (Josh Radnor) "
                     + "and how he fell in love. It all starts when Ted's best friend, Marshall " 
                     + "(Jason Segel), drops the bombshell that he's going to propose to his long-time " 
