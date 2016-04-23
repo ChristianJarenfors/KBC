@@ -15,8 +15,10 @@ namespace KBC.Controllers
             
             List<Serie> ResultList = new List<Serie>();
             string textstring = Request["Search"];
-            DateTime From = DateTime.Parse(Request["From"]);
-            DateTime To = DateTime.Parse(Request["To"]);
+            DateTime From; /* = DateTime.Parse(Request["From"]);*/
+            DateTime.TryParse(Request["From"],out From);
+            DateTime To; /*= DateTime.Parse(Request["To"]);*/
+            DateTime.TryParse(Request["To"], out To);
             List<int> Genres = new List<int>();
             Genres = AddGenres(Genres);
             using (SerieContext SC = new SerieContext())
@@ -74,14 +76,14 @@ namespace KBC.Controllers
         {
             for (int i = 0; i < 8; i++)
             {
-                List = AddGenre(List, ((GenreCollection)i).ToString());
+                List = AddGenre(List, i);
             }
             return List;
         }
-        public List<int> AddGenre(List<int> List, string Genre) {
-            if (Request[Genre]!=null)
+        public List<int> AddGenre(List<int> List, int Genre) {
+            if (Request[((GenreCollection)Genre).ToString()]!=null)
             {
-                List.Add(int.Parse(Request[Genre]));
+                List.Add(Genre);
             }
             return List;
         }

@@ -3,13 +3,13 @@
 @{
     ViewBag.Title = "SearchResult";
 }
-<form action="SearchResult" method="post">
+<form action="/Search/SearchResult" method="post">
     <input type="text" name="Search" placeholder=@Request["Search"] />
     <input type="datetime" name="From" placeholder=@Request["From"] /><label for="From">Start</label>
     <input type="datetime" name="To" placeholder=@Request["To"] /><label for="To">Slut</label>
     @{for (int i = 0; i < 8; i++)
         {
-        <input type="checkbox" name=@((GenreCollection)i) value=@((GenreCollection)i)/><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
+        <input type="checkbox" name=@((GenreCollection)i) value=@i/><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
     }
         <button type="submit">Search...</button>
     }
