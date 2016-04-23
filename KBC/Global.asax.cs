@@ -14,5 +14,9 @@ namespace KBC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+        void Session_Start(Object o,EventArgs e)
+        {
+
+        }
     }
 }
