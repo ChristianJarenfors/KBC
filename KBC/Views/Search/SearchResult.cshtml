@@ -3,65 +3,69 @@
 @{
     ViewBag.Title = "SearchResult";
 }
-<form action="/Search/SearchResult" method="post">
-    <input type="text" name="Search" placeholder=@Request["Search"] />
-    <input type="datetime" name="From" placeholder=@Request["From"] /><label for="From">Start</label>
-    <input type="datetime" name="To" placeholder=@Request["To"] /><label for="To">Slut</label>
-    @{for (int i = 0; i < 8; i++)
-        {
-        <input type="checkbox" name=@((GenreCollection)i) value=@i/><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
-    }
-        <button type="submit">Search...</button>
-    }
-</form>
-<h2>SearchResult</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDatum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfVotes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AverageGrade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDatum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfVotes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AverageGrade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+<body>
+    <section class="section-search">
+        <div class="container-fluid">
+            <form action="/Search/SearchResult" method="post">
+                <input type="text" name="Search" placeholder=@Request["Search"] />
+                <input type="datetime" name="From" placeholder=@Request["From"] /><label for="From">Start</label>
+                <input type="datetime" name="To" placeholder=@Request["To"] /><label for="To">Slut</label>
+                @{for (int i = 0; i < 8; i++)
+            {
+                        <input type="checkbox" name=@((GenreCollection)i) value=@i /><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
+                    }
+                    <button type="submit">Search...</button>
+                }
+            </form>
+            <h2>SearchResult</h2>
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReleaseDatum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NumberOfVotes)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AverageGrade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseDatum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumberOfVotes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AverageGrade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </section>
+</body>

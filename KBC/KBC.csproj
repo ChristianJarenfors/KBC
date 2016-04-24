@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604231248334_Updaterar Databasen.resx">
