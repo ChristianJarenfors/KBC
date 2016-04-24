@@ -23,32 +23,65 @@ namespace KBC.Controllers
             Genres = AddGenres(Genres);
             using (SerieContext SC = new SerieContext())
             {
+                //Serie S = new Serie()
+                //{
+
+                //    Name = "Game of Thrones",
+                //    ReleaseDatum = new DateTime(2008, 3, 13, 8, 0, 0),
+                //    AverageGrade = 5,
+                //    NumberOfVotes = 100,
+                //    Description = "While a civil war brews between several noble families in Westeros,"
+                //+ "the children of the former rulers of the land attempt to rise up to power."
+                //+ "Meanwhile a forgotten race, bent on destruction, return after thousands of years in the North."
+                //};
+                //SC.Serie.Add(S);
+                //SC.SaveChanges();
+                //SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, S, SC);
+                //SC.Serie.Add(S);
                 ResultList = SeriesBasedOnGenre(Genres, SC);
-                ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To);
-                ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring);
-                if (ResultList==null)
-                {
-                    ResultList = SC.Serie.ToList();
-                }
+                ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
+                ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
+                //if (ResultList.Count==0)
+                //{
+                //    ResultList = SC.Serie.ToList();
+                //}
+                //SC.SaveChanges();
             }
+            
             return View(ResultList);
         }
 
-        private List<Serie> SeriesSelectedBasedOnTextString(List<Serie> List, string textstring)
+        private List<Serie> SeriesSelectedBasedOnTextString(List<Serie> List, string textstring,SerieContext SC)
         {
-            var newList = (from x in List
-                           where x.Name.Contains(textstring) || x.Description.Contains(textstring)
-                           orderby x.GenreIds
+            List<Serie> newList;
+            if ((List.Count == 0) || (List == null))
+            {
+                List = SC.Serie.ToList();
+            }
+            if (textstring!=null)
+            {
+                newList = (from x in List
+                           where x.Name.ToLower().Contains(textstring.ToLower()) || x.Description.ToLower().Contains(textstring.ToLower())
+                           orderby x.GenreId
                            select x).ToList();
+            }
+            else
+            {
+                return List;
+            }
             return newList;
         }
 
-        private List<Serie> SeriesSelectedBasedOnRelease(List<Serie> List, DateTime From, DateTime to)
+        private List<Serie> SeriesSelectedBasedOnRelease(List<Serie> List, DateTime From, DateTime to,SerieContext SC)
         {
-            var newList = (from x in List
-                          where From <= x.ReleaseDatum && x.ReleaseDatum <= to
-                          select x).ToList();
-
+            List<Serie> newList;
+            if ((List.Count == 0)||(List==null))
+            {
+                List = SC.Serie.ToList();
+            }
+            newList = (from x in List
+                       where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
+                       select x).ToList();
             return newList;
         }
 
@@ -58,14 +91,21 @@ namespace KBC.Controllers
             HashSet < Serie > Kortare = new HashSet<Serie>();
             foreach (int Genre in GenreId)
             {
-                foreach (Genre item in SC.Genre)
+                foreach (var item in SC.Genre)
                 {
                     if ((GenreCollection)Genre == item.GenreType)
                     {
-                        foreach (Serie itemToBeAdded in item.Serie)
+                        if (item.SerieId!=null)
                         {
-                            Kortare.Add(itemToBeAdded);
+                            foreach (int itemToBeAdded in item.SerieId.ToList())
+                            {
+                                using (SerieContext Sc = new SerieContext())
+                                {
+                                    Kortare.Add((from x in Sc.Serie where x.Id == itemToBeAdded select x).First());
+                                }
+                            }
                         }
+                        
                     }
                 }
             }
@@ -87,5 +127,6 @@ namespace KBC.Controllers
             }
             return List;
         }
+        
     }
 }

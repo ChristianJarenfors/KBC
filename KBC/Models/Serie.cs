@@ -14,33 +14,39 @@ namespace KBC.Models
         public virtual String Name { get; set; }
         public virtual DateTime ReleaseDatum { get; set; }
         [ForeignKey("GenreTypes")]
-        public virtual IList<int> GenreIds { get; set; }
+        public virtual IList<int> GenreId { get; set; }
         public virtual IList<Genre> GenreTypes { get; set; }
-        public virtual int NumberOfVotes { get; private set; }
+        public virtual int NumberOfVotes { get; set; }
         public virtual float AverageGrade
         {
-            get
-            { return AverageGrade; }
-            set
-            {
-                float oldscore = NumberOfVotes * AverageGrade;
-                oldscore += value;
-                NumberOfVotes++;
-                AverageGrade = AverageGrade / NumberOfVotes;
-            }
+            get;
+            set;
         }
         public virtual string Description { get; set; }
-        public virtual IList<string> SerieImgsURL { get; set; }
-        public virtual IList<string> SerieVideoURL { get; set; }
+        [ForeignKey("SerieImgsURL")]
+        public virtual IList<int> SerieImgURLIds { get; set; }
+        public virtual IList<SerieImgURL> SerieImgsURL { get; set; }
+        [ForeignKey("SerieVideoURL")]
+        public virtual IList<int> SerieVideoURLIds { get; set; }
+        public virtual IList<SerieVideoURL> SerieVideoURL { get; set; }
         public Serie() {
-            GenreIds = null;
+            GenreId = null;
             GenreTypes = null;
             SerieImgsURL = null;
             SerieVideoURL = null;
-            NumberOfVotes = 0;
-            AverageGrade = 0;
+            
         }
 
-
+        //if (NumberOfVotes!=0)
+        //{
+        //    float oldscore = NumberOfVotes * AverageGrade;
+        //    oldscore += value;
+        //    NumberOfVotes=NumberOfVotes+1;
+        //    AverageGrade = oldscore / NumberOfVotes;
+        //}
+        //else
+        //{
+        //    AverageGrade = 0;
+        //}
     }
 }
