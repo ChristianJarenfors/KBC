@@ -12,7 +12,8 @@ namespace KBC.Controllers
         // GET: Search
         public ActionResult SearchResult()
         {
-            
+
+
             List<Serie> ResultList = new List<Serie>();
             string textstring = Request["Search"];
             DateTime From; /* = DateTime.Parse(Request["From"]);*/
@@ -41,6 +42,7 @@ namespace KBC.Controllers
                 ResultList = SeriesBasedOnGenre(Genres, SC);
                 ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
                 ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
+                //SerieGenre sg = new SerieGenre { Genre = GenreCollection.};
                 //if (ResultList.Count==0)
                 //{
                 //    ResultList = SC.Serie.ToList();
@@ -62,7 +64,7 @@ namespace KBC.Controllers
             {
                 newList = (from x in List
                            where x.Name.ToLower().Contains(textstring.ToLower()) || x.Description.ToLower().Contains(textstring.ToLower())
-                           orderby x.GenreId
+                          
                            select x).ToList();
             }
             else
@@ -79,10 +81,20 @@ namespace KBC.Controllers
             {
                 List = SC.Serie.ToList();
             }
-            newList = (from x in List
-                       where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
-                       select x).ToList();
-            return newList;
+            DateTime D = new DateTime(1800, 1, 1,0,0,0);
+            if (From > D && to > D)
+            {
+                newList = (from x in List
+                           where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
+                           select x).ToList();
+                return newList;
+            }
+            else
+            {
+                return List;
+            }
+            
+            
         }
 
         public List<Serie> SeriesBasedOnGenre( List<int> GenreId,SerieContext SC)
@@ -93,19 +105,15 @@ namespace KBC.Controllers
             {
                 foreach (var item in SC.Genre)
                 {
-                    if ((GenreCollection)Genre == item.GenreType)
+                    if ((GenreCollection)Genre == item.Genre)
                     {
-                        if (item.SerieId!=null)
+                        using (SerieContext Sc = new SerieContext())
                         {
-                            foreach (int itemToBeAdded in item.SerieId.ToList())
-                            {
-                                using (SerieContext Sc = new SerieContext())
-                                {
-                                    Kortare.Add((from x in Sc.Serie where x.Id == itemToBeAdded select x).First());
-                                }
-                            }
-                        }
-                        
+                            var s = (from x in Sc.Serie
+                                     where x.SerieId == item.SerieId
+                                     select x).First();
+                            Kortare.Add(s);
+                        } 
                     }
                 }
             }

@@ -7,13 +7,13 @@ namespace KBC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Testingtryingtomakeitwork : IMigrationMetadata
+    public sealed partial class OMG : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Testingtryingtomakeitwork));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OMG));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604241049550_Testing trying to make it work"; }
+            get { return "201604251032307_OMG!!"; }
         }
         
         string IMigrationMetadata.Source

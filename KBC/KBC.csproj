@@ -124,40 +124,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.cs" />
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.Designer.cs">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604231405191_try to add UrlLists.cs" />
-    <Compile Include="Migrations\201604231405191_try to add UrlLists.Designer.cs">
-      <DependentUpon>201604231405191_try to add UrlLists.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604231727258_Add Some IDs For URL.cs" />
-    <Compile Include="Migrations\201604231727258_Add Some IDs For URL.Designer.cs">
-      <DependentUpon>201604231727258_Add Some IDs For URL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.cs" />
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.Designer.cs">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.cs" />
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.Designer.cs">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.cs" />
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.Designer.cs">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.cs" />
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.Designer.cs">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
+    <Compile Include="Migrations\201604251032307_OMG!!.cs" />
+    <Compile Include="Migrations\201604251032307_OMG!!.Designer.cs">
+      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\GenreCollection.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\SerieImgURL.cs" />
     <Compile Include="Models\SerieVideoURL.cs" />
+    <Compile Include="Models\SerieGenre.cs" />
+    <Compile Include="Old stuff\Genre.cs" />
     <Compile Include="SerieContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,26 +159,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604231248334_Updaterar Databasen.resx">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604231405191_try to add UrlLists.resx">
-      <DependentUpon>201604231405191_try to add UrlLists.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604231727258_Add Some IDs For URL.resx">
-      <DependentUpon>201604231727258_Add Some IDs For URL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240758203_Tries to add The URL tables.resx">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.resx">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240839141_trying to fix Genres.resx">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241049550_Testing trying to make it work.resx">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604251032307_OMG!!.resx">
+      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
