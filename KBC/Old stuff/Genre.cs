@@ -11,10 +11,12 @@ namespace KBC.Models
     {
         
         [Key]
-        public virtual int Id { get; set; }
+        public virtual int GenreId { get; set; }
         public virtual GenreCollection GenreType { get; set; }
         [ForeignKey("Serie")]
-        public virtual IList<int> SerieId { get; set; }
+        //[InverseProperty("SerieId")]
+        public IList<int> SerieIds { get; set; }
+        
         public virtual IList<Serie> Serie { get; set; }
 
     }

@@ -7,13 +7,13 @@ namespace KBC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class trytoaddUrlLists : IMigrationMetadata
+    public sealed partial class TryingtoeditModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(trytoaddUrlLists));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TryingtoeditModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201604231405191_try to add UrlLists"; }
+            get { return "201604250946244_Trying to edit Models"; }
         }
         
         string IMigrationMetadata.Source

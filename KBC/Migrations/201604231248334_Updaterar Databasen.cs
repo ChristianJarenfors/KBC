@@ -27,7 +27,9 @@ namespace KBC.Migrations
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
-            
+            DropIndex("dbo.SerieGenres", new[] { "Genre_GenreType" });
+            DropIndex("dbo.SerieGenres", new[] { "Serie_Id" });
+            DropTable("dbo.SerieGenres");
             CreateTable(
                 "dbo.SerieGenres",
                 c => new
