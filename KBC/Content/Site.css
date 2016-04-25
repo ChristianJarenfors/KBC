@@ -67,7 +67,7 @@ h1 {
 /*<button type="button" style="width:24px; text-align:center; ">A</button>*/
 
 #btn-genre-animated {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     color: white;   
@@ -86,7 +86,7 @@ h1 {
 }
 
 #btn-genre-comedy {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -103,7 +103,7 @@ h1 {
 }
 
 #btn-genre-romance {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -120,7 +120,7 @@ h1 {
 }
 
 #btn-genre-scifi {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -137,7 +137,7 @@ h1 {
 }
 
 #btn-genre-drama {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -154,7 +154,7 @@ h1 {
 }
 
 #btn-genre-fantasy {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -171,7 +171,7 @@ h1 {
 }
 
 #btn-genre-thriller {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -188,7 +188,7 @@ h1 {
 }
 
 #btn-genre-horror {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
@@ -205,7 +205,7 @@ h1 {
 }
 
 #btn-genre-action {
-    padding-top: 20%;
+    padding-top: 80px;
     font-size: 300%;
     border: none;
     margin-top: 40px;
