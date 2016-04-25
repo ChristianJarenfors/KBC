@@ -19,15 +19,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">KBC logo</a>
+                    <a class="navbar-brand" href="~/Home/Index">KBC logo</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
                         @*Länkarna, lägga till här tex*@
                         @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                        <li><a href="#">Profil<span class="sr-only">(current)</span></a></li> @*Lagt till active för att visa*@
+                        <li><a href="~/MovieProfile/Index">Profil<span class="sr-only">(current)</span></a></li> @*Lagt till active för att visa*@
                         <li><a href="~/Search/SearchResult">Serier</a></li>
+                        <li><a href="~/MovieProfile/Index">Serie-Profile</a></li>
 
                         @*Dropdown menyn, om vi vill ha den kvar.*@
                         <li class="dropdown">
