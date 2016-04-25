@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace KBC.Controllers
 {
-    public class MovieProfileController : Controller
+    public class SerieProfileController : Controller
     {
         // GET: MovieProfile
         public ActionResult Index()
