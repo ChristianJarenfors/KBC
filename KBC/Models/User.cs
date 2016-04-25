@@ -26,7 +26,11 @@ namespace KBC.Models
         public virtual string Password { get; set; }
         public virtual string Email { get; set; }
         public virtual string ProfilePictureUrl { get; set; }
+        public virtual int Age { get; set; }
+        public virtual string Country { get; set; }
+        public virtual string Gender { get; set; }
         public virtual IList<Serie> SeriesFollowed { get; set; }
+
 
     }
 }
