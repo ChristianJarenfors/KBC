@@ -25,6 +25,7 @@ html {
 }
 
 #nav-bar-of-doom {
+    /*color: white;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -236,3 +237,13 @@ h1 {
     background-size: cover;
 }
 
+/* ------------------------------------------------------ */
+/* Section Footer  */
+/* ------------------------------------------------------ */
+
+footer {
+    color: white;
+    font-size: 200%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
