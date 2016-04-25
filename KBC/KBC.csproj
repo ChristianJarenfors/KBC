@@ -124,29 +124,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.cs" />
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.Designer.cs">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.cs" />
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.Designer.cs">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.cs" />
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.Designer.cs">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.cs" />
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.Designer.cs">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.cs" />
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.Designer.cs">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604250946244_Trying to edit Models.cs" />
-    <Compile Include="Migrations\201604250946244_Trying to edit Models.Designer.cs">
-      <DependentUpon>201604250946244_Trying to edit Models.cs</DependentUpon>
+    <Compile Include="Migrations\201604251032307_OMG!!.cs" />
+    <Compile Include="Migrations\201604251032307_OMG!!.Designer.cs">
+      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreCollection.cs" />
@@ -177,23 +157,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604231248334_Updaterar Databasen.resx">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240758203_Tries to add The URL tables.resx">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.resx">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240839141_trying to fix Genres.resx">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241049550_Testing trying to make it work.resx">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604250946244_Trying to edit Models.resx">
-      <DependentUpon>201604250946244_Trying to edit Models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604251032307_OMG!!.resx">
+      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

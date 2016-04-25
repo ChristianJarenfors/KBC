@@ -81,10 +81,20 @@ namespace KBC.Controllers
             {
                 List = SC.Serie.ToList();
             }
-            newList = (from x in List
-                       where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
-                       select x).ToList();
-            return newList;
+            DateTime D = new DateTime(1800, 1, 1,0,0,0);
+            if (From > D && to > D)
+            {
+                newList = (from x in List
+                           where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
+                           select x).ToList();
+                return newList;
+            }
+            else
+            {
+                return List;
+            }
+            
+            
         }
 
         public List<Serie> SeriesBasedOnGenre( List<int> GenreId,SerieContext SC)
@@ -99,7 +109,10 @@ namespace KBC.Controllers
                     {
                         using (SerieContext Sc = new SerieContext())
                         {
-                            Kortare.Add(item.Serie);
+                            var s = (from x in Sc.Serie
+                                     where x.SerieId == item.SerieId
+                                     select x).First();
+                            Kortare.Add(s);
                         } 
                     }
                 }
