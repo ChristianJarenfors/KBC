@@ -99,7 +99,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\jimmy.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -124,13 +123,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SerieProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604251032307_OMG!!.cs" />
-    <Compile Include="Migrations\201604251032307_OMG!!.Designer.cs">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <Compile Include="Migrations\201604260940155_Database.cs" />
+    <Compile Include="Migrations\201604260940155_Database.Designer.cs">
+      <DependentUpon>201604260940155_Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreCollection.cs" />
@@ -149,11 +147,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Search\SearchResult.cshtml" />
+
     <Content Include="Views\Filmprofil\Index.cshtml" />
+
     <Content Include="Views\SerieProfile\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\UserProfile\Index.cshtml" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,8 +164,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604251032307_OMG!!.resx">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604260940155_Database.resx">
+      <DependentUpon>201604260940155_Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
