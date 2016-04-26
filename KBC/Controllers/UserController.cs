@@ -70,12 +70,12 @@ namespace KBC.Controllers
 
             }
 
-            if (tmpUsername.Length < 6)
+            if (tmpUsername.Trim().Length < 3)
             {
 
                 return Redirect("User/UsernameTooShort");
             }
-            else if (tmpPassword.Length < 6)
+            else if (tmpPassword.Trim().Length < 6)
             {
 
                 return Redirect("User/PasswordTooShort");
@@ -99,7 +99,7 @@ namespace KBC.Controllers
             }
 
 
-            if (tmpUsername.Length >= 6 && tmpPassword.Length >= 6)
+            if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
             {
                 User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
                 Session["UserLoggedIn"] = true;
