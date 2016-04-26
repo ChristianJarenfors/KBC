@@ -125,9 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604251032307_OMG!!.cs" />
-    <Compile Include="Migrations\201604251032307_OMG!!.Designer.cs">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <Compile Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.cs" />
+    <Compile Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.Designer.cs">
+      <DependentUpon>201604260812435_PLEASE JUST FUCKING WORK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreCollection.cs" />
@@ -172,8 +172,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604251032307_OMG!!.resx">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.resx">
+      <DependentUpon>201604260812435_PLEASE JUST FUCKING WORK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,7 @@ namespace KBC
     public class UserContext : DbContext
     {
 
-        public UserContext() : base("ProjectTestDatabase")
+        public UserContext() : base("Test1")
         {
 
         }
