@@ -7,9 +7,10 @@
     <section class="section-search">
         <div class="container-fluid">
             <form action="/Search/SearchResult" method="post">
-                <input type="text" name="Search" placeholder=@Request["Search"] />
-                <input type="datetime" name="From" placeholder=@Request["From"] /><label for="From">Start</label>
-                <input type="datetime" name="To" placeholder=@Request["To"] /><label for="To">Slut</label>
+                <input type="text" name="Search" value=@Request["Search"] />
+                <label for="From">Start</label><input type="datetime" name="From" value=@Request["From"] />
+                <label for="To">End</label><input type="datetime" name="To" value=@Request["To"] />
+                <label for="Grade">Grade(0-5)</label><input name="Grade" type="range" value="@Request["Grade"]"/>
                 @{for (int i = 0; i < 8; i++)
             {
                         <input type="checkbox" name=@((GenreCollection)i) value=@i /><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
