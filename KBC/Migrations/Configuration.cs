@@ -70,6 +70,8 @@ namespace KBC.Migrations
             //});
             SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, 1, context);
             SerieContext.SetUpGenres(new List<int>() { 4, 5, 6, 7 }, 2, context);
+
+
         }
         
     }
