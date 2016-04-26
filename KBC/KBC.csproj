@@ -124,7 +124,6 @@
     <Compile Include="Controllers\SerieProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,16 +152,16 @@
     <Content Include="Views\Filmprofil\Index.cshtml" />
     <Content Include="Views\SerieProfile\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\NewFolder1\EmailExists.cshtml" />
-    <Content Include="Views\NewFolder1\EmailNotValid.cshtml" />
-    <Content Include="Views\NewFolder1\FieldIsEmpty.cshtml" />
-    <Content Include="Views\NewFolder1\Index.cshtml" />
-    <Content Include="Views\NewFolder1\PasswordNotMatch.cshtml" />
-    <Content Include="Views\NewFolder1\PasswordTooShort.cshtml" />
-    <Content Include="Views\NewFolder1\RegisterError.cshtml" />
-    <Content Include="Views\NewFolder1\RegisterSuccess.cshtml" />
-    <Content Include="Views\NewFolder1\UsernameExists.cshtml" />
-    <Content Include="Views\NewFolder1\UsernameTooShort.cshtml" />
+    <Content Include="Views\User\EmailExists.cshtml" />
+    <Content Include="Views\User\EmailNotValid.cshtml" />
+    <Content Include="Views\User\FieldIsEmpty.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\PasswordNotMatch.cshtml" />
+    <Content Include="Views\User\PasswordTooShort.cshtml" />
+    <Content Include="Views\User\RegisterError.cshtml" />
+    <Content Include="Views\User\RegisterSuccess.cshtml" />
+    <Content Include="Views\User\UsernameExists.cshtml" />
+    <Content Include="Views\User\UsernameTooShort.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
