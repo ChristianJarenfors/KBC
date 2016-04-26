@@ -7,6 +7,6 @@ namespace KBC.Models
 {
     public enum GenreCollection
     {
-        Action, Adventure, Fantasy, SciFi, Drama, Comedy, Thriller, Horror 
+        Animated, Action, Comedy, Drama, Fantasy, Horror, Romance, SciFi , Thriller 
     }
 }
