@@ -17,8 +17,7 @@ namespace KBC
         void Session_Start(Object o,EventArgs e)
         {
             Session["UserLoggedIn"] = false;
-            Session["CurrentUser"] = "";
-
+            Session["CurrentUser"] = "John Doe";
         }
     }
 }
