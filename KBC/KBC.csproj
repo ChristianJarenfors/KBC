@@ -120,14 +120,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SerieProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604251032307_OMG!!.cs" />
-    <Compile Include="Migrations\201604251032307_OMG!!.Designer.cs">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <Compile Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.cs" />
+    <Compile Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.Designer.cs">
+      <DependentUpon>201604260812435_PLEASE JUST FUCKING WORK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreCollection.cs" />
@@ -148,7 +150,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Search\SearchResult.cshtml" />
-    <Content Include="Views\Filmprofil\Index.cshtml" />
+    <Content Include="Views\SerieProfile\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\PasswordNotMatch.cshtml" />
@@ -172,8 +174,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604251032307_OMG!!.resx">
-      <DependentUpon>201604251032307_OMG!!.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604260812435_PLEASE JUST FUCKING WORK.resx">
+      <DependentUpon>201604260812435_PLEASE JUST FUCKING WORK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
