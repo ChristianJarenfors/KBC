@@ -152,6 +152,16 @@
     <Content Include="Views\Filmprofil\Index.cshtml" />
     <Content Include="Views\SerieProfile\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\NewFolder1\EmailExists.cshtml" />
+    <Content Include="Views\NewFolder1\EmailNotValid.cshtml" />
+    <Content Include="Views\NewFolder1\FieldIsEmpty.cshtml" />
+    <Content Include="Views\NewFolder1\Index.cshtml" />
+    <Content Include="Views\NewFolder1\PasswordNotMatch.cshtml" />
+    <Content Include="Views\NewFolder1\PasswordTooShort.cshtml" />
+    <Content Include="Views\NewFolder1\RegisterError.cshtml" />
+    <Content Include="Views\NewFolder1\RegisterSuccess.cshtml" />
+    <Content Include="Views\NewFolder1\UsernameExists.cshtml" />
+    <Content Include="Views\NewFolder1\UsernameTooShort.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
