@@ -1,6 +1,7 @@
 ﻿using KBC.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +21,17 @@ namespace KBC.Controllers
             DateTime.TryParse(Request["From"],out From);
             DateTime To; /*= DateTime.Parse(Request["To"]);*/
             DateTime.TryParse(Request["To"], out To);
+            double Grade;
+            if (Request["Grade"]!=null)
+            {
+                var culture = CultureInfo.InvariantCulture;
+                Grade = double.Parse(Request["Grade"],culture);
+                //double.TryParse(Request["Grade"], out Grade);
+            }
+            else
+            {
+                Grade = 0;
+            }
             List<int> Genres = new List<int>();
             Genres = AddGenres(Genres);
             using (SerieContext SC = new SerieContext())
@@ -41,6 +53,7 @@ namespace KBC.Controllers
                 //SC.Serie.Add(S);
                 ResultList = SeriesBasedOnGenre(Genres, SC);
                 ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
+                ResultList = SeriesSelectedBasedOnGrade(ResultList, Grade, SC);
                 ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
                 //SerieGenre sg = new SerieGenre { Genre = GenreCollection.};
                 //if (ResultList.Count==0)
@@ -51,6 +64,19 @@ namespace KBC.Controllers
             }
             
             return View(ResultList);
+        }
+
+        private List<Serie> SeriesSelectedBasedOnGrade(List<Serie> List, double v, SerieContext SC)
+        {
+            List<Serie> newList;
+            if ((List.Count == 0) || (List == null))
+            {
+                List = SC.Serie.ToList();
+            }
+            newList = (from x in List
+                       where x.AverageGrade >= v
+                       select x).ToList();
+            return newList;
         }
 
         private List<Serie> SeriesSelectedBasedOnTextString(List<Serie> List, string textstring,SerieContext SC)
@@ -135,6 +161,17 @@ namespace KBC.Controllers
             }
             return List;
         }
-        
+        public string RemoveFnuts(string s)
+        {
+            string Value="";
+            foreach (char item in s)
+            {
+                if (item!='"')
+                {
+                    Value=Value + item;
+                }
+            }
+            return Value;
+        }
     }
 }
