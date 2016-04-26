@@ -3,7 +3,7 @@ namespace KBC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class OMG : DbMigration
+    public partial class Database : DbMigration
     {
         public override void Up()
         {
