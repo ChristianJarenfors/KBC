@@ -99,7 +99,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\jimmy.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -121,45 +120,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SerieProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.cs" />
-    <Compile Include="Migrations\201604231248334_Updaterar Databasen.Designer.cs">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604231405191_try to add UrlLists.cs" />
-    <Compile Include="Migrations\201604231405191_try to add UrlLists.Designer.cs">
-      <DependentUpon>201604231405191_try to add UrlLists.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604231727258_Add Some IDs For URL.cs" />
-    <Compile Include="Migrations\201604231727258_Add Some IDs For URL.Designer.cs">
-      <DependentUpon>201604231727258_Add Some IDs For URL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.cs" />
-    <Compile Include="Migrations\201604240758203_Tries to add The URL tables.Designer.cs">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.cs" />
-    <Compile Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.Designer.cs">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.cs" />
-    <Compile Include="Migrations\201604240839141_trying to fix Genres.Designer.cs">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.cs" />
-    <Compile Include="Migrations\201604241049550_Testing trying to make it work.Designer.cs">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
+    <Compile Include="Migrations\201604260940155_Database.cs" />
+    <Compile Include="Migrations\201604260940155_Database.Designer.cs">
+      <DependentUpon>201604260940155_Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\GenreCollection.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\SerieImgURL.cs" />
     <Compile Include="Models\SerieVideoURL.cs" />
+    <Compile Include="Models\SerieGenre.cs" />
+    <Compile Include="Old stuff\Genre.cs" />
     <Compile Include="SerieContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,7 +149,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\Filmprofil\Index.cshtml" />
-    <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\SerieProfile\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,26 +163,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604231248334_Updaterar Databasen.resx">
-      <DependentUpon>201604231248334_Updaterar Databasen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604231405191_try to add UrlLists.resx">
-      <DependentUpon>201604231405191_try to add UrlLists.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604231727258_Add Some IDs For URL.resx">
-      <DependentUpon>201604231727258_Add Some IDs For URL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240758203_Tries to add The URL tables.resx">
-      <DependentUpon>201604240758203_Tries to add The URL tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240816074_ForeignKey In Genres For Series Added.resx">
-      <DependentUpon>201604240816074_ForeignKey In Genres For Series Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604240839141_trying to fix Genres.resx">
-      <DependentUpon>201604240839141_trying to fix Genres.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241049550_Testing trying to make it work.resx">
-      <DependentUpon>201604241049550_Testing trying to make it work.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604260940155_Database.resx">
+      <DependentUpon>201604260940155_Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -238,7 +199,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
