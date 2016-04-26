@@ -68,8 +68,8 @@ namespace KBC.Migrations
             //    + "have something else in store. The series is narrated through flashbacks from the future, "
             //    + "voiced by Bob Saget. The theme song is \"Hey Beautiful\" by The Solids."
             //});
-            SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, 1, context);
-            SerieContext.SetUpGenres(new List<int>() { 4, 5, 6, 7 }, 2, context);
+            //SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, 1, context);
+            //SerieContext.SetUpGenres(new List<int>() { 4, 5, 6, 7 }, 2, context);
         }
         
     }
