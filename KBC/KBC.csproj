@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SerieProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -165,6 +166,7 @@
     <Content Include="Views\User\UsernameTooShort.cshtml" />
     <Content Include="Views\User\WrongLogin.cshtml" />
     <Content Include="Views\Search\Create.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

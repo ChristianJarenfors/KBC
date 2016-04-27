@@ -15,7 +15,8 @@
 </head>
 <body id="body-of-doom">
     <section id="nav-bar-of-doom">
-        <nav class="navbar navbar-inverse">
+        @* ----Ändrar navbar färg här tex.----- *@
+        <nav class="navbar navbar-inverse" style="background-color: green;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -24,30 +25,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="~/Home/Index">KBC logo</a>
+                    <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/img/glyphicons-352-book-open.png" /></a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
                         @*Länkarna, lägga till här tex*@
                         @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                        <li><a href="~/SerieProfile/Index">Profil<span class="sr-only">(current)</span></a></li> @*Lagt till active för att visa*@
-                        <li><a href="~/Search/SearchResult">Serier</a></li>
-                        <li><a href="~/SerieProfile/Index">Serie-Profile</a></li>
+                        @*<li><a href="~/SerieProfile/Index">Profil<span class="sr-only">(current)</span></a></li>*@
+                        <li><a href="~/Search/SearchResult">Serier</a></li>                       
 
                         @*Dropdown menyn, om vi vill ha den kvar.*@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="~/Home/Index">Favorites</a></li>
-                                <li><a href="#">View Series</a></li>
+                                <li><a href="~/SerieProfile/Index">Serie Info</a></li>
                                 <li><a href="#">Tip a friend</a></li>
+                                <li><a href="~/Help/Index">Support</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Link to something</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Link to something</a></li>
                             </ul>
                         </li>
+
+                        @* --------------Log in knappen-------------- *@
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b></a>
                             <ul id="login-dp" class="dropdown-menu">
