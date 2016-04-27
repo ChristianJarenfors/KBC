@@ -113,7 +113,67 @@ namespace KBC.Controllers
             }
 
 
-            return Redirect("User/RegisterError");
+            return Redirect("/User/RegisterError");
+        }
+
+
+        public ActionResult Login()
+        {
+
+            SerieContext context = new SerieContext();
+
+            List<User> listOfUsers = new List<User>();
+
+
+            string tmpUsername = Request["Username"];
+            string tmpPassword = Request["Password"];
+            bool canLogIn = false;
+
+            foreach (var user in context.Users.AsEnumerable())
+            {
+
+                if (tmpUsername.ToLower() == user.Username.ToLower())
+                {
+                    if (tmpPassword == user.Password)
+                    {
+                        tmpUsername = user.Username;
+                        canLogIn = true;
+                        break;
+                         
+                    }
+                    
+                }
+
+            }
+
+
+            if (canLogIn)
+            {
+                Session["UserLoggedIn"] = true;
+                Session["CurrentUser"] = tmpUsername;
+
+            }
+            else
+            {
+
+                Redirect("/User/WrongLogin");
+            }
+
+
+            return Redirect("/Home/Index");
+        }
+
+        public ActionResult Logout()
+        {
+            if ((bool)Session["UserLoggedIn"] == true)
+            {
+                Session["UserLoggedIn"] = false;
+                Session["CurrentUser"] = "";
+
+            }
+
+
+            return Redirect("/Home/Index");
         }
 
 

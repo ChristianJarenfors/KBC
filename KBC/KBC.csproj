@@ -162,6 +162,7 @@
     <Content Include="Views\User\RegisterSuccess.cshtml" />
     <Content Include="Views\User\UsernameExists.cshtml" />
     <Content Include="Views\User\UsernameTooShort.cshtml" />
+    <Content Include="Views\User\WrongLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
