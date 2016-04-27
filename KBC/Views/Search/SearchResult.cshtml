@@ -7,13 +7,20 @@
     <section class="section-search">
         <div class="container-fluid">
             <form action="/Search/SearchResult" method="post">
-                <input type="text" name="Search" placeholder=@Request["Search"] />
-                <input type="datetime" name="From" placeholder=@Request["From"] /><label for="From">Start</label>
-                <input type="datetime" name="To" placeholder=@Request["To"] /><label for="To">Slut</label>
+                <input type="text" name="Search" value=@Request["Search"] />
+                <label for="From">Start</label><input type="datetime" name="From" value=@Request["From"] />
+                <label for="To">End</label><input type="datetime" name="To" value=@Request["To"] />
+                
+                <br />
                 @{for (int i = 0; i < 8; i++)
             {
-                        <input type="checkbox" name=@((GenreCollection)i) value=@i /><label for=@((GenreCollection)i)>@((GenreCollection)i)</label>
+                        <input type="checkbox" name=@((GenreType)i) value=@i /><label for=@((GenreType)i)>@((GenreType)i)</label>
                     }
+                    <br />
+                    <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)"  /><label for="Grade">5</label>
+                    <br />
+                    <span>Grade: </span><p id="CurrentGrade">2.5</p>
+                    <br />
                     <button type="submit">Search...</button>
                 }
             </form>
@@ -38,10 +45,11 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Description)
                     </th>
-                    <th></th>
+                    <th>
+                    <th>@Html.DisplayNameFor(model => model.SerieImgsURL)</th>
                 </tr>
                 @foreach (var item in Model)
-            {
+                {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
@@ -59,9 +67,16 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                           @{var imgUrl = (from x in item.SerieImgsURL
+                                             where x.ImgType == 0
+                                             select x.ImgURL).First();
+                            <img src="@imgUrl" alt="Alternate Text" />
+                               }
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SerieId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.SerieId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SerieId })
                         </td>
                     </tr>
                 }
@@ -69,3 +84,14 @@
         </div>
     </section>
 </body>
+<script>
+    function showVal(newVal) {
+        document.getElementById("CurrentGrade").innerHTML = newVal;
+    }
+    //var GradeRange = document.getElementById("Grade");
+    //var GradeLabel = document.getElementById("CurrentGrade");
+    //var x = function () {
+    //    GradeLabel.innerHTML = GradeRange.value;
+    //}
+    //GradeRange.addEventListener(ondrag, x);
+</script>

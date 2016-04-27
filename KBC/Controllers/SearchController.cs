@@ -1,6 +1,7 @@
 ﻿using KBC.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,16 +10,31 @@ namespace KBC.Controllers
 {
     public class SearchController : Controller
     {
+        public ActionResult Create()
+        {
+            return View();
+        }
         // GET: Search
         public ActionResult SearchResult()
         {
-            
+
             List<Serie> ResultList = new List<Serie>();
             string textstring = Request["Search"];
             DateTime From; /* = DateTime.Parse(Request["From"]);*/
             DateTime.TryParse(Request["From"],out From);
             DateTime To; /*= DateTime.Parse(Request["To"]);*/
             DateTime.TryParse(Request["To"], out To);
+            double Grade;
+            if (Request["Grade"]!=null)
+            {
+                var culture = CultureInfo.InvariantCulture;
+                Grade = double.Parse(Request["Grade"],culture);
+                //double.TryParse(Request["Grade"], out Grade);
+            }
+            else
+            {
+                Grade = 0;
+            }
             List<int> Genres = new List<int>();
             Genres = AddGenres(Genres);
             using (SerieContext SC = new SerieContext())
@@ -40,15 +56,46 @@ namespace KBC.Controllers
                 //SC.Serie.Add(S);
                 ResultList = SeriesBasedOnGenre(Genres, SC);
                 ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
+                ResultList = SeriesSelectedBasedOnGrade(ResultList, Grade, SC);
                 ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
+                //SerieGenre sg = new SerieGenre { Genre = GenreCollection.};
                 //if (ResultList.Count==0)
                 //{
                 //    ResultList = SC.Serie.ToList();
                 //}
                 //SC.SaveChanges();
+                ResultList = ImgListAdded(ResultList, SC);
             }
             
             return View(ResultList);
+        }
+
+        private List<Serie> ImgListAdded(List<Serie> List, SerieContext SC)
+        {
+            if ((List.Count == 0) || (List == null))
+            {
+                List = SC.Serie.ToList();
+            }
+            foreach (var item in List)
+            {
+                item.SerieImgsURL = (from x in item.SerieImgsURL
+                                     where x.SerieId == item.SerieId
+                                     select x).ToList();
+            }
+            return List;
+        }
+
+        private List<Serie> SeriesSelectedBasedOnGrade(List<Serie> List, double v, SerieContext SC)
+        {
+            List<Serie> newList;
+            if ((List.Count == 0) || (List == null))
+            {
+                List = SC.Serie.ToList();
+            }
+            newList = (from x in List
+                       where x.AverageGrade >= v
+                       select x).ToList();
+            return newList;
         }
 
         private List<Serie> SeriesSelectedBasedOnTextString(List<Serie> List, string textstring,SerieContext SC)
@@ -62,7 +109,7 @@ namespace KBC.Controllers
             {
                 newList = (from x in List
                            where x.Name.ToLower().Contains(textstring.ToLower()) || x.Description.ToLower().Contains(textstring.ToLower())
-                           orderby x.GenreId
+                          
                            select x).ToList();
             }
             else
@@ -79,10 +126,20 @@ namespace KBC.Controllers
             {
                 List = SC.Serie.ToList();
             }
-            newList = (from x in List
-                       where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
-                       select x).ToList();
-            return newList;
+            DateTime D = new DateTime(1800, 1, 1,0,0,0);
+            if (From > D && to > D)
+            {
+                newList = (from x in List
+                           where (From <= x.ReleaseDatum) && (x.ReleaseDatum <= to)
+                           select x).ToList();
+                return newList;
+            }
+            else
+            {
+                return List;
+            }
+            
+            
         }
 
         public List<Serie> SeriesBasedOnGenre( List<int> GenreId,SerieContext SC)
@@ -93,19 +150,15 @@ namespace KBC.Controllers
             {
                 foreach (var item in SC.Genre)
                 {
-                    if ((GenreCollection)Genre == item.GenreType)
+                    if ((GenreType)Genre == item.Genre)
                     {
-                        if (item.SerieId!=null)
+                        using (SerieContext Sc = new SerieContext())
                         {
-                            foreach (int itemToBeAdded in item.SerieId.ToList())
-                            {
-                                using (SerieContext Sc = new SerieContext())
-                                {
-                                    Kortare.Add((from x in Sc.Serie where x.Id == itemToBeAdded select x).First());
-                                }
-                            }
-                        }
-                        
+                            var s = (from x in Sc.Serie
+                                     where x.SerieId == item.SerieId
+                                     select x).First();
+                            Kortare.Add(s);
+                        } 
                     }
                 }
             }
@@ -121,12 +174,23 @@ namespace KBC.Controllers
             return List;
         }
         public List<int> AddGenre(List<int> List, int Genre) {
-            if (Request[((GenreCollection)Genre).ToString()]!=null)
+            if (Request[((GenreType)Genre).ToString()]!=null)
             {
                 List.Add(Genre);
             }
             return List;
         }
-        
+        public string RemoveFnuts(string s)
+        {
+            string Value="";
+            foreach (char item in s)
+            {
+                if (item!='"')
+                {
+                    Value=Value + item;
+                }
+            }
+            return Value;
+        }
     }
 }
