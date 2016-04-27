@@ -20,7 +20,7 @@ namespace KBC.Models
             {
                 SC.Genre.Add(new SerieGenre()
                 {
-                    Genre = (GenreCollection)i,
+                    Genre = (GenreType)i,
                     Serie = s,
                     SerieId = SerieId
                 });

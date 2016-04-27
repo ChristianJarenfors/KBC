@@ -9,7 +9,7 @@ namespace KBC.Models
     {
         public int Id { get; set; }
 
-        public GenreCollection Genre { get; set; }
+        public GenreType Genre { get; set; }
 
         public int SerieId { get; set; }
         public virtual Serie Serie { get; set; }
