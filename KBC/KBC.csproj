@@ -127,12 +127,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604260940155_Database.cs" />
-    <Compile Include="Migrations\201604260940155_Database.Designer.cs">
-      <DependentUpon>201604260940155_Database.cs</DependentUpon>
+    <Compile Include="Migrations\201604271118599_Test.cs" />
+    <Compile Include="Migrations\201604271118599_Test.Designer.cs">
+      <DependentUpon>201604271118599_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\GenreCollection.cs" />
+    <Compile Include="Models\GenreType.cs" />
+    <Compile Include="Models\ImgType.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\SerieImgURL.cs" />
     <Compile Include="Models\SerieVideoURL.cs" />
@@ -163,6 +164,7 @@
     <Content Include="Views\User\UsernameExists.cshtml" />
     <Content Include="Views\User\UsernameTooShort.cshtml" />
     <Content Include="Views\User\WrongLogin.cshtml" />
+    <Content Include="Views\Search\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,8 +177,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604260940155_Database.resx">
-      <DependentUpon>201604260940155_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604271118599_Test.resx">
+      <DependentUpon>201604271118599_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

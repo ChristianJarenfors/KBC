@@ -10,10 +10,13 @@ namespace KBC.Controllers
 {
     public class SearchController : Controller
     {
+        public ActionResult Create()
+        {
+            return View();
+        }
         // GET: Search
         public ActionResult SearchResult()
         {
-
 
             List<Serie> ResultList = new List<Serie>();
             string textstring = Request["Search"];
@@ -61,9 +64,25 @@ namespace KBC.Controllers
                 //    ResultList = SC.Serie.ToList();
                 //}
                 //SC.SaveChanges();
+                ResultList = ImgListAdded(ResultList, SC);
             }
             
             return View(ResultList);
+        }
+
+        private List<Serie> ImgListAdded(List<Serie> List, SerieContext SC)
+        {
+            if ((List.Count == 0) || (List == null))
+            {
+                List = SC.Serie.ToList();
+            }
+            foreach (var item in List)
+            {
+                item.SerieImgsURL = (from x in item.SerieImgsURL
+                                     where x.SerieId == item.SerieId
+                                     select x).ToList();
+            }
+            return List;
         }
 
         private List<Serie> SeriesSelectedBasedOnGrade(List<Serie> List, double v, SerieContext SC)
@@ -131,7 +150,7 @@ namespace KBC.Controllers
             {
                 foreach (var item in SC.Genre)
                 {
-                    if ((GenreCollection)Genre == item.Genre)
+                    if ((GenreType)Genre == item.Genre)
                     {
                         using (SerieContext Sc = new SerieContext())
                         {
@@ -155,7 +174,7 @@ namespace KBC.Controllers
             return List;
         }
         public List<int> AddGenre(List<int> List, int Genre) {
-            if (Request[((GenreCollection)Genre).ToString()]!=null)
+            if (Request[((GenreType)Genre).ToString()]!=null)
             {
                 List.Add(Genre);
             }

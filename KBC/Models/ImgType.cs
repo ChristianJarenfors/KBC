@@ -5,8 +5,8 @@ using System.Web;
 
 namespace KBC.Models
 {
-    public enum GenreCollection
+    public enum ImgType
     {
-        Animated, Action, Comedy, Drama, Fantasy, Horror, Romance, SciFi , Thriller 
+        Cover, Banner
     }
 }
