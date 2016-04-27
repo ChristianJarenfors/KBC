@@ -48,6 +48,39 @@
                                 <li><a href="#">Link to something</a></li>
                             </ul>
                         </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <form class="form-group" action="/User/Login" method="post">
+                                    <fieldset>
+                                        <input type="text" name="Username" placeholder="Username" /><br />
+                                        <input type="password" name="Password" placeholder="Password" /><br /><br />
+                                        <input type="submit" style="margin:auto;" value="Submit" />
+                                    </fieldset>
+                                </form>
+                            </ul>
+                        </li>
+
+                        @if((bool)Session["UserLoggedIn"] == true)
+                        {
+                            <li style="color:green;">You are logged in as: <strong style="color:white;">@Session["CurrentUser"]</strong></li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@Session["CurrentUser"]<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="/User/Logout">Logout</a></li>
+                                </ul>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li style="color:red;">You are <u>NOT</u> logged in!</li>
+
+                        }
+
                     </ul>
 
                     @*Höger sida av nav-bar*@

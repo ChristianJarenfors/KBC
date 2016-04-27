@@ -11,6 +11,7 @@ namespace KBC.Models
         public SerieContext() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Test1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False") { }
         public DbSet<Serie> Serie { get; set; }
         public DbSet<SerieGenre> Genre { get; set; }
+        public DbSet<User> Users { get; set; }
         public static void SetUpGenres(List<int> GenreToBeAdded, int SerieId, SerieContext SC)
         {
             var s = (from x in SC.Serie
