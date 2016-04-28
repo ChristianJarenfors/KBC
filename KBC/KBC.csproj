@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201604280741101_Ny Update.Designer.cs">
       <DependentUpon>201604280741101_Ny Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604280839356_TEsting.cs" />
+    <Compile Include="Migrations\201604280839356_TEsting.Designer.cs">
+      <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\ImgType.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604280741101_Ny Update.resx">
       <DependentUpon>201604280741101_Ny Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604280839356_TEsting.resx">
+      <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
