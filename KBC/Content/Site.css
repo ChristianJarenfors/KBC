@@ -25,13 +25,7 @@ section {
     margin-top: 0px;
 }
 
-#body-of-doom {
-    /*background-color: black;*/
-}
 
-/*#nav-bar-of-doom {
-    color: white;
-}*/
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -44,6 +38,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* ------------------------------------------------------ */
+/* Fonts - Finns inlagda */
+
+/*font-family: 'Play', sans-serif;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Bangers', cursive;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Aldrich', sans-serif;
+font-family: 'Press Start 2P', cursive;*/
+
+/* ------------------------------------------------------ */
 
 /* ------------------------------------------------------ */
 /* Headers */
