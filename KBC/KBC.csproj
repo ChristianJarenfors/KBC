@@ -176,6 +176,8 @@
     <Content Include="Views\User\WrongLogin.cshtml" />
     <Content Include="Views\Search\Create.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
+    <Content Include="Views\Grade\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

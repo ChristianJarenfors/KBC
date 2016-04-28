@@ -375,3 +375,87 @@ footer {
         border-top:0 none;
     }
 }
+
+
+/* ------------------------------------------------------ */
+/* Navigation design - Nav'en i olika format */
+/* ------------------------------------------------------ */
+
+.navbar-default {
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.3) !important;
+    text-transform: uppercase !important;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    background-color: #000000 !important;
+}
+
+.navbar-default .navbar-brand {
+    font-weight: 700 !important;
+}
+
+.navbar-default .navbar-brand:focus {
+    outline: 0 !important;
+}
+
+.navbar-default .navbar-brand .navbar-toggle {
+    padding: 4px 6px !important;
+    font-size: 16px !important;
+    color: #ffffff !important;
+}
+
+.navbar-default .navbar-brand .navbar-toggle:focus,
+.navbar-default .navbar-brand .navbar-toggle:active {
+    outline: 0 !important;
+}
+
+.navbar-default a {
+    color: #ffffff !important;
+}
+
+.navbar-default .nav li a {
+    -webkit-transition: background .3s ease-in-out !important;
+    -moz-transition: background .3s ease-in-out !important;
+    transition: background .3s ease-in-out !important;
+}
+
+.navbar-default .nav li a:hover {
+    outline: 0 !important;
+    color: rgba(255,255,255,.8) !important;
+    background-color: transparent !important;
+}
+
+.navbar-default .nav li a:focus,
+.navbar-default .nav li a:active {
+    outline: 0 !important;
+    background-color: transparent !important;
+}
+
+.navbar-default .nav li.active {
+    outline: 0 !important;
+}
+
+.navbar-default .nav li.active a {
+    background-color: rgba(255,255,255,.3) !important;
+}
+
+.navbar-default .nav li.active a:hover {
+    color: #ffffff !important;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 20px 0 !important;
+        border-bottom: 0 !important;
+        letter-spacing: 1px !important;
+        background: 0 0 !important;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out !important;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out !important;
+        transition: background .5s ease-in-out,padding .5s ease-in-out !important;
+    }
+
+    .navbar-default.top-nav-collapse {
+        padding: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,.3) !important;
+        background: #000000 !important;
+    }
+}

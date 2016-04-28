@@ -6,66 +6,31 @@
 
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/jimmy.css" rel="stylesheet" type="text/css" />
-     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <title>@ViewBag.Title - Home of series!</title>
+    <title>KBC - Home of series!</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-</head>
-<body id="body-of-doom">
-    <section id="nav-bar-of-doom">
-        @* ----Ändrar navbar färg här tex.----- *@
-        <nav class="navbar navbar-inverse" style="background-color: orangered;">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/img/glyphicons-352-book-open.png" /></a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav">
+    @* ----Javascript----- *@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/grayscale.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+</head>
+@*  
+        @* ----Ändrar navbar färg här tex.----- *@
                        
                         @* --------------Log in knappen-------------- *@
+                       
+                                        
+                        @*<li><a href="~/Search/SearchResult" id="nav-länkarna">Serier</a></li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna"><b>Login</b></a>
-                            <ul id="login-dp" class="dropdown-menu">
-                                <li>
-                                    <div class="row">
-                                        <div class="col-md-12">                                          
-                                            <form class="form" role="form" method="post" action="/User/Login" accept-charset="UTF-8" id="login-nav">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputEmail2">Username</label>
-                                                    <input type="text" class="form-control" name="Username" placeholder="Username" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                    <input type="password" name="Password" class="form-control" placeholder="Password" required>                                                    
-                                                </div>
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-success btn-block" id="btn-login">Sign in</button>
-                                                </div>                                               
-                                            </form>
-                                        </div>
-                                        <div class="bottom text-center">
-                                            New user? <a href="~/User/Index"><b>Register</b></a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-
-                        @*Länkarna, lägga till här tex*@
-                        @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@                        
-                        <li><a href="~/Search/SearchResult" id="nav-länkarna">Serier</a></li>
-
-                        @*Dropdown menyn, om vi vill ha den kvar.*@
+                        Dropdown menyn, om vi vill ha den kvar.
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -79,7 +44,7 @@
                             </ul>
                         </li>
 
-                        @*<li class="dropdown">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <form class="form-group" action="/User/Login" method="post">
@@ -90,7 +55,7 @@
                                     </fieldset>
                                 </form>
                             </ul>
-                        </li>*@
+                        </li>
 
                         @if((bool)Session["UserLoggedIn"] == true)
                         {
@@ -113,7 +78,7 @@
 
                     </ul>
 
-                    @*Höger sida av nav-bar*@
+                    Höger sida av nav-bar
                     <form action="/Search/SearchResult" method="post" id="nav-search" class="navbar-form navbar-right" role="search">
                         <div class="form-group">
                             <input type="text" name="Search" class="form-control" placeholder="Search">
@@ -122,8 +87,89 @@
                     </form>
                 </div>
             </div>
-        </nav>
-    </section>
+        </nav>*@
+
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Texten och knapp för att komma till toppen. -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*Tre streck när man förminskar, kan bytas till bild*@
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+                    <!-- Länk till förstasidan -->
+                    <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/img/glyphicons-352-book-open.png" /></a>               
+            </div>
+
+            <!-- Lista med nav länkarna -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a href="~/Search/SearchResult" id="nav-länkarna">Serier</a>
+                    </li>
+
+                    <!-- ------------- Dropdown Login och dropdown profil ----------------------- -->                   
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Dropdown <span class="caret"></span></a>
+                        <!-- ------------- Här ändrar du färg på bakgrunden på dropdown ----------------------- -->
+                        <ul class="dropdown-menu" role="menu" style="background-color:#C15A2D;">
+                            <li><a href="~/SerieProfile/Index">Serie Info</a></li>
+                            <li><a href="#">Tip a friend</a></li>
+                            <li><a href="~/Help/Index">Support</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Grade/Index">Grade a serie</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Link to something</a></li>
+                        </ul>
+                    </li>    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna">Login</a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form" role="form" method="post" action="/User/Login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputEmail2">Username</label>
+                                                <input type="text" class="form-control" name="Username" placeholder="Username" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <input type="password" name="Password" class="form-control" placeholder="Password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success btn-block" id="btn-login">Sign in</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        New user? <a href="~/User/Index"><b>Register</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>       
+                                                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
     <div class="container-fluid body-content">
         @RenderBody()
         <br />
@@ -135,7 +181,7 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
 </body>
 </html>
