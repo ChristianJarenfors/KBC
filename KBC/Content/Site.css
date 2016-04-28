@@ -23,9 +23,9 @@ html {
     background-color: black;
 }
 
-#nav-bar-of-doom {
-    /*color: white;*/
-}
+/*#nav-bar-of-doom {
+    color: white;
+}*/
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -305,9 +305,13 @@ footer {
 /* Nav-bar - Log in */
 /* ------------------------------------------------------ */
 
-#btn-login {
-    color: white;
-}
+ #nav-länkarna {
+     color: white;     
+ }
+
+ #nav-länkarna:hover {
+     color: white;     
+ }
 
 #login-dp{
     min-width: 250px;

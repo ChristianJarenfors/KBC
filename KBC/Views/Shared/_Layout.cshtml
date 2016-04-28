@@ -16,7 +16,7 @@
 <body id="body-of-doom">
     <section id="nav-bar-of-doom">
         @* ----Ändrar navbar färg här tex.----- *@
-        <nav class="navbar navbar-inverse" style="background-color: green;">
+        <nav class="navbar navbar-inverse" style="background-color: orangered;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -30,29 +30,11 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        @*Länkarna, lägga till här tex*@
-                        @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                        @*<li><a href="~/SerieProfile/Index">Profil<span class="sr-only">(current)</span></a></li>*@
-                        <li><a href="~/Search/SearchResult">Serier</a></li>                       
-
-                        @*Dropdown menyn, om vi vill ha den kvar.*@
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="~/SerieProfile/Index">Serie Info</a></li>
-                                <li><a href="#">Tip a friend</a></li>
-                                <li><a href="~/Help/Index">Support</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Link to something</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Link to something</a></li>
-                            </ul>
-                        </li>
-
+                       
                         @* --------------Log in knappen-------------- *@
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna"><b>Login</b></a>
                             <ul id="login-dp" class="dropdown-menu">
                                 <li>
                                     <div class="row">
@@ -76,6 +58,24 @@
                                         </div>
                                     </div>
                                 </li>
+                            </ul>
+                        </li>
+
+                        @*Länkarna, lägga till här tex*@
+                        @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@                        
+                        <li><a href="~/Search/SearchResult" id="nav-länkarna">Serier</a></li>
+
+                        @*Dropdown menyn, om vi vill ha den kvar.*@
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="~/SerieProfile/Index">Serie Info</a></li>
+                                <li><a href="#">Tip a friend</a></li>
+                                <li><a href="~/Help/Index">Support</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Link to something</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Link to something</a></li>
                             </ul>
                         </li>
 
