@@ -26,7 +26,7 @@ section {
 }
 
 #body-of-doom {
-    background-color: black;
+    /*background-color: black;*/
 }
 
 /*#nav-bar-of-doom {
@@ -36,8 +36,6 @@ section {
 /* Set padding to keep content from hitting the edges */
 .body-content {
     background-color: black;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -285,30 +283,33 @@ h1 {
 /* Section Grade-serie  */
 /* ------------------------------------------------------ */
 
-/* LIST #2 */
-#list2 { width:320px; }
-#list2 ol { font-style:italic; font-family:Georgia, Times, serif; font-size:24px; color:#bfe1f1;  }
-#list2 ol li { }
-#list2 ol li p { padding:8px; font-style:normal; font-family:Arial; font-size:13px; color:#eee; border-left: 1px solid #999; }
-#list2 ol li p em { display:block; }
-
-#grade-box-input {
-    border: solid 1px white;
-    border-radius: 25px;
+.section-grade-serie {       
+    margin-top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(img/night-television-tv-theme-machines.jpg);
+    background-size: cover;
+    color: #fff;
 }
 
 #grade-container {
     color: white;
-    background-color: black;
-    margin-top: 4%;
+    margin-top: 10%;
     margin-bottom: 12%;
-    padding-top: 40px;
+    padding-top: 60px;
     padding-bottom: 40px;
+    overflow:hidden;
+    width: 30%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0.9;
 }
 
-.grade-form {      
-    padding-top: 20px;
-    padding-bottom: 20px;
+.grade-form {  
+    margin-top: 20%;
+    margin-bottom: 13%;
+    background-color: black;    
+    opacity: 0.9;
+    padding-top: 40px;
+    padding-bottom: 80px;    
 }
 
 

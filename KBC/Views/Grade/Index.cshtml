@@ -3,22 +3,13 @@
 
 <body>
     <section class="section-grade-serie">
-        <div class="container" id="grade-container">
+        @*<div class="container" id="grade-container">*@
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div id="list2"><br />
-                        <ol>
-                            <li><p><em>E-mail</em> dont forget it, so we know who is posting the grade.</p></li>
-                            <li><p><em>Choose serie</em> from the list of serie that exists.</p></li>
-                            <li><p><em>Your thoughts</em> about the serie, why give that grade?</p></li>
-                            <li><p><em>Grade</em> the serie, from 0-5.</p></li>
-                        </ol>
-                    </div>
-                    <a href="~/Home/Index" class="btn btn-lg btn-success" style="width: 50%; text-transform: uppercase; margin-top: 22%; margin-left: 5%;">To frontpage</a>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6" id="grade-box-input">
-                    <center>
+                <div class="col-lg-4 col-md-4 col-sm-4"></div>                
+                <div class="col-lg-4 col-md-4 col-sm-4" id="grade-box-input">
+                    <center><br /><br />              
                         <form class="grade-form">
+                            <h1>Make your review</h1>
                             <fieldset class="form-group">
                                 <label for="inputEmail">1. Email address</label>
                                 <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
@@ -34,12 +25,13 @@
                                     <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)" /><label for="Grade">5</label>
                                 <br />                                    
                                  <br />
-                                    <button class="btn btn-lg btn-success" href="#" style="width: 50%; text-transform: uppercase;" type="submit">Grade!</button>                           
+                                    <button class="btn btn-lg btn-success" href="#" style="width: 47%; text-transform: uppercase;" type="submit">Grade!</button>                           
                             </form>
                         <br />                   
                     </center>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-4"></div>  
              </div>
-        </div>
+        @*</div>*@
     </section>
 </body>
