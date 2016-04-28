@@ -72,11 +72,15 @@ namespace KBC.Migrations
             SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, 5, context);
             SerieContext.SetUpGenres(new List<int>() { 4, 5, 6, 7 }, 6, context);
             Serie s = (from x in context.Serie
+                       where x.Name.Contains("Game")
+                       select x).First();
+
+            s.SerieImgsURL = new List<SerieImgURL>() { new SerieImgURL() { ImgType = ImgType.Cover, ImgURL = @"http://www.stoneykins.com/Patterns/product_images/e/149/Game_of_Thrones_tn__77121_std.png" }, { new SerieImgURL() { ImgType = ImgType.Banner, ImgURL = "URL" } } };
+            s = (from x in context.Serie
                        where x.Name.Contains("How")
                        select x).First();
 
-            s.SerieImgsURL = new List<SerieImgURL>() { new SerieImgURL() { ImgType = ImgType.Banner, ImgURL = "URL" }, { new SerieImgURL() { ImgType = ImgType.Cover, ImgURL = "URL" } } };
-
+            s.SerieImgsURL = new List<SerieImgURL>() { new SerieImgURL() { ImgType = ImgType.Cover, ImgURL = @"https://v.cdn.vine.co/r/avatars/D0A6B55AAB1040788837653241856_17a62797dbd.4.7_X9TGvDShOHDefmN6ACIt13Gy3zNZMBMcyN7KnvN81Xfj8iKVr2bgYnsCNiLrP5KS.jpg?versionId=z_AG4BQSS9tua.zxJCeENZLeRFf04.5a" }, { new SerieImgURL() { ImgType = ImgType.Banner, ImgURL = "URL" } } };
 
         }
 
