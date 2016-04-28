@@ -4,13 +4,13 @@
 /* ------------------------------------------------------ */
 
 body {
+    background-color: black;
     width: 100%;
     height: 100%;
     /*font-style:italic; 
     font-family:Georgia, Times, serif;*/
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #000000;   
-    padding-top: 25px;
+    color: #000000;       
     padding-bottom: 20px;
 }
 
@@ -19,6 +19,10 @@ html {
     color: white;
     width: 100%;
     height: 100%;
+}
+
+section {
+    margin-top: 100px;
 }
 
 #body-of-doom {
