@@ -13,5 +13,21 @@ namespace KBC.Models
         public virtual int SerieId { get; set; }
         public virtual ImgType ImgType { get; set; }
         public virtual string ImgURL { get; set; }
+        public static string GetTheFirstImgOfOneType(IList<SerieImgURL> item, ImgType imgtype)
+        {
+            var list = (from x in item
+                         where x.ImgType == imgtype
+                         select x.ImgURL);
+            //string imgUrlstring = "";
+            if (list.Count() != 0)
+            {
+                return list.First();
+            }
+            else
+            {
+                return "";
+            }
+             
+        }
     }
 }

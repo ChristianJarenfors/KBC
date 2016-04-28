@@ -67,11 +67,7 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         <td>
-                           @{var imgUrl = (from x in item.SerieImgsURL
-                                             where x.ImgType == 0
-                                             select x.ImgURL).First();
-                            <img src="@imgUrl" alt="Alternate Text" />
-                               }
+                                <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" alt="Alternate Text" /> 
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.SerieId }) |
