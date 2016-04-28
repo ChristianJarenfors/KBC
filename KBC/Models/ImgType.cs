@@ -7,6 +7,6 @@ namespace KBC.Models
 {
     public enum ImgType
     {
-        Cover, Banner
+        Cover, Banner, Video
     }
 }
