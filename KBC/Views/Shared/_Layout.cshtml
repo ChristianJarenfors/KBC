@@ -104,6 +104,7 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+
                     @if ((bool)Session["UserLoggedIn"] == true)
                     {
                         <li style="color:green;">You are logged in as: <strong style="color:white;">@Session["CurrentUser"]</strong></li>
@@ -122,6 +123,7 @@
                         <li style="color:red;">You are <u>NOT</u> logged in!</li>
 
                     }
+
                     <li>
                         <a href="~/Search/SearchResult" id="nav-länkarna">Serier</a>
                     </li>
@@ -129,7 +131,7 @@
                     <!-- ------------- Dropdown Login och dropdown profil ----------------------- -->                   
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Profil<span class="caret"></span></a>
                         <!-- ------------- Här ändrar du färg på bakgrunden på dropdown ----------------------- -->
                         <ul class="dropdown-menu" role="menu" style="background-color:#C15A2D;">
                             <li><a href="~/SerieProfile/Index">Serie Info</a></li>
@@ -138,7 +140,7 @@
                             <li class="divider"></li>
                             <li><a href="~/Grade/Index">Grade a serie</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Link to something</a></li>
+                            <li><a href="#">To my profile</a></li>
                         </ul>
                     </li>    
                     
