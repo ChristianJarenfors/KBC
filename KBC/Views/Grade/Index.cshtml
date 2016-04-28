@@ -1,0 +1,44 @@
+﻿
+
+<body>
+    <section class="section-grade-serie">
+        <div class="container" id="grade-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div id="list2">
+                        <ol>
+                            <li><p><em>The Netherlands</em> is a country in ...</p></li>
+                            <li><p><em>The United States of America</em> is a federal constitutional ...</p></li>
+                            <li><p><em>The Philippines</em> officially known as the Republic ...</p></li>
+                            <li><p><em>The United Kingdom</em> of Great Britain and ...</p></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6" id="grade-box-input">
+                    <center>
+                        <form class="grade-form">
+                            <fieldset class="form-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                <small class="text-muted">We'll never share your email with anyone else.</small>
+                            </fieldset>
+                            <label for="forSeriesList">Wich serie do you want to grade?</label>
+                            <select class="form-control"></select>
+                            <fieldset class="form-group">
+                                <label for="textInputGrade">Max 200 characters:</label>
+                                <textarea class="form-control" id="TextAreaForGrade" rows="7"></textarea>
+                            </fieldset>
+                            <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)" /><label for="Grade">5</label>
+                            <br />
+                            <span>Grade: </span><p id="CurrentGrade">2.5</p>
+                            <br />
+                            <button class="btn btn-lg btn-success" style="width: 50%; text-transform: uppercase;" type="submit">Grade!</button>
+                        </form>
+                        <br />
+                    
+                    </center>
+                </div>
+             </div>
+        </div>
+    </section>
+</body>
