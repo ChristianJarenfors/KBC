@@ -314,8 +314,9 @@ h1 {
 /* Section Help - Support  */
 /* ------------------------------------------------------ */
 
+
 .section-banner-contact-us {
-    padding-bottom: 600px;
+    padding-bottom: 500px;
     width: 100%;
     height: 100%;
     color: #fff;    
@@ -333,9 +334,22 @@ h1 {
     background-size: cover;   
 }
 
+/* Headers - Support  */
+
 #support-header {
     padding-top: 20px;
     color: black;
+}
+
+#contact-us-banner-header {
+    margin-top: 0px;
+    padding-top: 70px;
+}
+
+#contact-us-header {
+    margin-top: 0px;
+    padding-top: 70px;
+    padding-bottom: 5%;
 }
 
 #usual-questions {
@@ -349,9 +363,18 @@ h1 {
 }
 
 .section-contact-us {
-    background-color: lightgrey;
-
+    background-color: black;
+    text-align: center;
 }
+
+#contact-block a {
+    color: orange;
+}
+
+ #contact-block {
+     padding-bottom: 14%;
+     color: white;
+ }
 
 /* Bakgrund */
 
