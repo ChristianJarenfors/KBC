@@ -7,14 +7,30 @@ body {
     background-color: black;
     width: 100%;
     height: 100%;
-    /*font-style:italic; 
-    font-family:Georgia, Times, serif;*/
-    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: 'Shadows Into Light', cursive !important;*/
+    /*font-family: 'Architects Daughter', cursive !important;*/
+    /*font-family: 'Bangers', cursive !important;*/
+    /*font-family: 'Orbitron', sans-serif !important;*/
+    font-family: 'Aldrich', sans-serif !important;
+    /*font-family: 'Press Start 2P', cursive, 'Play', sans-serif !important;*/ /*Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;*/
     color: #000000;       
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
-html {   
+button {
+    font-family: 'Aldrich', sans-serif !important;
+}
+
+p {
+    font-family: 'Aldrich', sans-serif !important;
+}
+
+a {
+    font-family: 'Aldrich', sans-serif !important;
+}
+
+html { 
+    font-family: 'Aldrich', sans-serif !important;  
     background-color: black;
     color: white;
     width: 100%;
@@ -62,6 +78,8 @@ h1 {
     text-transform: uppercase;    
     letter-spacing: 1px;
     font-weight: bold;
+    font-family: 'Press Start 2P', cursive, 'Play', sans-serif !important;
+    font-size: 40px !important;
 }
 
 
@@ -311,7 +329,7 @@ h1 {
     padding-bottom: 20%;
     color: #fff;    
     text-align: center !important;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Content/img/startup-photos.jpg');    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Content/img/hand-top-white-old.jpg');    
     background-size: cover;   
 }
 
@@ -413,7 +431,7 @@ footer {
  }
 
  #nav-länkarna:hover {
-     color: white;     
+     color: orange !important;     
  }
 
 #login-dp{
@@ -422,6 +440,15 @@ footer {
     overflow:hidden;
     background-color:rgba(255,255,255,.8);
 }
+
+#login-dp a {
+    color: black !important;
+}
+
+#login-dp a:hover {
+    color: #336600 !important;    
+}
+
 #login-dp .help-block{
     font-size:12px    
 }
@@ -430,6 +457,7 @@ footer {
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
+
 }
 #login-dp .form-group {
     margin-bottom: 10px;
