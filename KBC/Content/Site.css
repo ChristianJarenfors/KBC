@@ -3,6 +3,11 @@
 /* Innehåll - Contentlayout */
 /* ------------------------------------------------------ */
 
+#serie-cover-grid {
+    color: white;
+}
+
+
 body {
     background-color: black;
     width: 100%;
