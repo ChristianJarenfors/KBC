@@ -17,6 +17,11 @@ body {
     padding-bottom: 15px;
 }
 
+hr {
+    height: 10px;
+    color: white;
+}
+
 button {
     font-family: 'Aldrich', sans-serif !important;
 }
@@ -92,6 +97,50 @@ h2 {
 /* Section - "Serie-profile  */
 /* ------------------------------------------------------ */
 
+/*För tabellen när den förminskas*/
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+        border: 1px solid #ccc; 
+	}
+	
+    /*Behave  like a "row"*/
+
+	td {	  
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+}
+
+
 /* Eventuellt för att få nedre delen faded. */
 /*linear-gradient(
     to bottom,
@@ -111,17 +160,25 @@ h2 {
     background-size: cover;   
 }
 
+@media 
+only screen and (max-width: 200px),
+(min-device-width: 368px) and (max-device-width: 4024px) {
+
+#serie-info img {
+        width: 350px;
+        height: 500px;
+    }
+}
+
 #serie-info {   
    border: none;
    margin-top: 40px;
-   width: 50%;
+   width: 100%;
    height: auto;
 }
 
 #serie-info-2 {
-    border-radius: 25px;
-    border: 2px solid green;
-    width: 50%;
+    width: 100%;
     height: 400px;
     color: white;
     margin-bottom: 20px;
@@ -129,13 +186,10 @@ h2 {
     background-color: #000000;
 }
 
-#recensions-box {
+.review-series-box {
+    background-color: #000;
+    text-align: center;
     color: white;
-    background-color: black;
-    border-radius: 25px;
-    border: 2px solid yellow;
-    width: 100%;
-    height: 400px;
 }
 
 /* ------------------------------------------------------ */

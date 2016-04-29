@@ -1,87 +1,83 @@
 ﻿
 <body>
-    <section class="section-serie-profile">   
-            <div class="jumbotron" id="serie-profile-jumbotron">
-                <br />
-                <br />
-                <h1 style="color: white;">Kan infoga titel med razor här</h1>
-                <a class="btn btn-danger btn-lg" href="~/Home/Index">Back to Genre</a>
-            </div>
+    <section class="section-serie-profile">
+        <div class="jumbotron" id="serie-profile-jumbotron">
+            <br />
+            <br />
+            <h1 style="color: white;">Kan infoga titel med razor här</h1>
+            <a class="btn btn-danger btn-lg" href="~/Home/Index">Back to Genre</a>
+        </div>
+        <center><h2 style="color: white;">About the serie!</h2></center>
 
-            <div class="col-lg-12">
-                <center><h2 style="color: white;">About the serie!</h2></center>
-                <div class="row">
-                    @*<span class="label label-default">Action</span>
+        @*<span class="label label-default">Action</span>
             <span class="label label-primary">Comedy</span>
             <span class="label label-success">Animated</span>
             <span class="label label-warning">Fantasy</span>
             <span class="label label-danger">Romance</span>
             <span class="label label-info">Drama</span>*@
-                    <div class="col-lg-6 col-md-6 col-sm-6" id="serie-info">
-                        <center><img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" /></center>
-                    </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6" id="serie-info-2">
-                            <br />
-                            <table class="table">
-                                <tr>
-                                    <th>
-                                        Title
-                                    </th>
-                                    <th>
-                                        Genre
-                                    </th>
-                                    <th>
-                                        Actors
-                                    </th>
-                                    <th>
-                                        Year
-                                    </th>
-                                    <th>
-                                        Grade
-                                    </th>
-                                </tr>
 
-                                @* -------Hur en foreach skulle kunna se ut till tabellen------- *@
-                                @*@foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ProductName)
-                                        </td>
-                                        <td id="table-small-image">
-                                            <img class="thumbnail img-responsive" id="shoppingcart-img" src="@item.imgUrl" />
-                                        </td>
-                                        <td>
-                                            <a href="@Url.Action("AddToCartInsideCart", "ShoppingCart", new { item.ProductID })"><span class="glyphicon glyphicon-plus"></span></a>
-                                            @Html.DisplayFor(modelItem => item.TotalAmountPerID)
-                                            <a href="@Url.Action("DeleteInsideCart", "ShoppingCart", new { item.ProductID })"><span class="glyphicon glyphicon-minus"></span></a>
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Price) &dollar;
-                                        </td>
-                                        <td>
-                                            @{
-                                                int price = item.Price * item.TotalAmountPerID;
-                                                string total = price.ToString() + " " + "$";
-                                            }
-                                            @total
-                                        </td>
-                                    </tr>
-                                                }*@
+        <div class="col-lg-3 col-md-6 col-sm-6" id="serie-info">
+            <center><img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" /></center>
+        </div>
 
-                            </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12" id="recensions-box">
-                        <p>tjogohohoohohoh</p>
-                        <p>tjogohohoohohoh</p>
-                        <p>tjogohohoohohoh</p>
-                        <p>tjogohohoohohoh</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-lg-6 col-md-6 col-sm-6" id="serie-info-2">
+            <br />
+            <table class="table">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Genre
+                    </th>
+                    <th>
+                        Actors
+                    </th>
+                    <th>
+                        Year
+                    </th>
+                    <th>
+                        Grade
+                    </th>
+                </tr>
+
+                @* -------Hur en foreach skulle kunna se ut till tabellen------- *@
+                @*@foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td id="table-small-image">
+                                <img class="thumbnail img-responsive" id="shoppingcart-img" src="@item.imgUrl" />
+                            </td>
+                            <td>
+                                <a href="@Url.Action("AddToCartInsideCart", "ShoppingCart", new { item.ProductID })"><span class="glyphicon glyphicon-plus"></span></a>
+                                @Html.DisplayFor(modelItem => item.TotalAmountPerID)
+                                <a href="@Url.Action("DeleteInsideCart", "ShoppingCart", new { item.ProductID })"><span class="glyphicon glyphicon-minus"></span></a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price) &dollar;
+                            </td>
+                            <td>
+                                @{
+                                    int price = item.Price * item.TotalAmountPerID;
+                                    string total = price.ToString() + " " + "$";
+                                }
+                                @total
+                            </td>
+                        </tr>
+                                    }*@
+
+            </table>
+        </div>
     </section>
+        <section class="review-series-box">
+            <hr/>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p>Infoga razorsyntax som skickar in informationen/post som gjorts i databasen. Läs ut det här.</p>
+            </div>
+        </section>   
 </body>
 
 
