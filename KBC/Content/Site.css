@@ -201,6 +201,12 @@ only screen and (max-width: 200px),
 /* Section Help - Support  */
 /* ------------------------------------------------------ */
 
+.contact-us-text {
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+    text-align: justify;
+}
+
 
 .section-banner-contact-us {
     padding-bottom: 500px;
@@ -258,8 +264,9 @@ only screen and (max-width: 200px),
     color: orange;
 }
 
- #contact-block {
-     padding-bottom: 14%;
+ #contact-block {    
+     height: 280px;
+     margin-bottom: 14%;
      color: white;
  }
 
