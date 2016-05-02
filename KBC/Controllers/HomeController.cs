@@ -13,9 +13,6 @@ namespace KBC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            SerieContext context = new SerieContext();
-
-            int numberOfUsers = context.Users.Count();
 
             return View();
         }
