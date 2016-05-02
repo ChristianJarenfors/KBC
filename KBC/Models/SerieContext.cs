@@ -8,10 +8,26 @@ namespace KBC.Models
 {
     public class SerieContext : DbContext
     {
-        public SerieContext() : base(@"Data Source=killedbythecredits-215839.mssql.binero.se;Initial Catalog=215839-killedbythecredits;Integrated Security=False;User ID=215839_nd73572;Connect Timeout=300;Encrypt=False;Packet Size=4096;Password=84tFuG34hHv-T4.E,tv;MultipleActiveResultsSets=True;") { }
+        public SerieContext() : base("Webb") { }
         public DbSet<Serie> Serie { get; set; }
         public DbSet<SerieGenre> Genre { get; set; }
         public DbSet<User> Users { get; set; }
+        protected override void OnModelCreating(DbModelBuilder
+                                                modelBuilder)
+        {
+            modelBuilder.Entity<Serie>()
+                .HasMany(s => s.SerieImgsURL)
+                .WithRequired(i => i.Serie)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Serie>()
+                .HasMany(s => s.Genres)
+                .WithRequired(g => g.Serie)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.SeriesFollowed)
+                .WithMany();
+
+        }
         public static void SetUpGenres(List<int> GenreToBeAdded, int SerieId, SerieContext SC)
         {
             var s = (from x in SC.Serie

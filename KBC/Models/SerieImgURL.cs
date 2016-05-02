@@ -11,6 +11,7 @@ namespace KBC.Models
         public virtual int Id { get; set; }
         //[ForeignKey("SerieId")]
         public virtual int SerieId { get; set; }
+        public virtual Serie Serie { get; set; }
         public virtual ImgType ImgType { get; set; }
         public virtual string ImgURL { get; set; }
         public static string GetTheFirstImgOfOneType(IList<SerieImgURL> item, ImgType imgtype)
