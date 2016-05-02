@@ -6,65 +6,61 @@
 
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/jimmy.css" rel="stylesheet" type="text/css" />
-     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <title>@ViewBag.Title - Home of series!</title>
+    <title>KBC - Home of series!</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+
+    @* ----Javascript----- *@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/grayscale.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    @* ----Fonts----- *@
+    <link href='https://fonts.googleapis.com/css?family=Play:400,700|Shadows+Into+Light|Architects+Daughter|Bangers|Orbitron:400,700|Aldrich|Press+Start+2P' rel='stylesheet' type='text/css'>
+
 </head>
-<body id="body-of-doom">
-    <section id="nav-bar-of-doom">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="~/Home/Index">KBC logo</a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav">
-                        @*Länkarna, lägga till här tex*@
-                        @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                        <li><a href="~/SerieProfile/Index">Profil<span class="sr-only">(current)</span></a></li> @*Lagt till active för att visa*@
-                        <li><a href="~/Search/SearchResult">Serier</a></li>
-                        <li><a href="~/SerieProfile/Index">Serie-Profile</a></li>
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Texten och knapp för att komma till toppen. -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*Tre streck när man förminskar, kan bytas till bild*@
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+                    <!-- Länk till förstasidan, kan lägga en bra ikon här -->
+                    <a class="navbar-brand" href="~/Home/Index">KBC</a>  
+                <form action="/Search/SearchResult" method="post" id="nav-search" class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" name="Search" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>             
+            </div>
 
-                        @*Dropdown menyn, om vi vill ha den kvar.*@
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="~/Home/Index">Favorites</a></li>
-                                <li><a href="#">View Series</a></li>
-                                <li><a href="#">Tip a friend</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Link to something</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Link to something</a></li>
-                            </ul>
-                        </li>
+            <!-- Lista med nav länkarna -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                
+                <ul class="nav navbar-nav">
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <form class="form-group" action="/User/Login" method="post">
-                                    <fieldset>
-                                        <input type="text" name="Username" placeholder="Username" /><br />
-                                        <input type="password" name="Password" placeholder="Password" /><br /><br />
-                                        <input type="submit" style="margin:auto;" value="Submit" />
-                                    </fieldset>
-                                </form>
-                            </ul>
-                        </li>
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
 
-                        @if((bool)Session["UserLoggedIn"] == true)
-                        {
-                            <li style="color:green;">You are logged in as: <strong style="color:white;">@Session["CurrentUser"]</strong></li>
+                    @if ((bool)Session["UserLoggedIn"] == true)
+                    {
+                        <li style="color:green;">You are logged in as: <strong style="color:white;">@Session["CurrentUser"]</strong></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@Session["CurrentUser"]<span class="caret"></span></a>
@@ -74,26 +70,73 @@
                                 </ul>
                             </li>
 
-                        }
-                        else
-                        {
-                            <li style="color:red;">You are <u>NOT</u> logged in!</li>
+                    }
+                    else
+                    {
+                        <li style="color:red;">You are <u>NOT</u> logged in!</li>
 
-                        }
+                    }
 
-                    </ul>
+                    <li>
+                        <a href="~/Search/SearchResult" id="nav-länkarna">Search</a>
+                    </li>
+                    <li>
+                        <a href="~/Library/Index" id="nav-länkarna">Library</a>
+                    </li>
 
-                    @*Höger sida av nav-bar*@
-                    <form action="/Search/SearchResult" method="post" id="nav-search" class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <input type="text" name="Search" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
+                    <!-- ------------- Dropdown Login och dropdown profil ----------------------- -->                   
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Profil<span class="caret"></span></a>
+                        <!-- ------------- Här ändrar du färg på bakgrunden på dropdown ----------------------- -->
+                        <ul class="dropdown-menu" role="menu" id="login-dp">
+                            <li><a href="~/SerieProfile/Index">Serie Info</a></li>
+                            <li><a href="#">Tip a friend</a></li>
+                            <li><a href="~/Help/Index">Support</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Grade/Index">Create review</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">To my profile</a></li>
+                            <br />
+                        </ul>
+                    </li>    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna">Login</a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form" role="form" method="post" action="/User/Login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputEmail2">Username</label>
+                                                <input type="text" class="form-control" name="Username" placeholder="Username" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <input type="password" name="Password" class="form-control" placeholder="Password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success btn-block" id="btn-login">Sign in</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">                                        
+                                        <button href="~/User/Index" class="btn btn-primary btn-block">Register</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>       
+                                                 
+                </ul>
             </div>
-        </nav>
-    </section>
+        </div>
+    </nav>
+
+
+
+
     <div class="container-fluid body-content">
         @RenderBody()
         <br />
@@ -104,8 +147,5 @@
             <center><p>&copy; @DateTime.Now.Year - KBC series!</p></center>
         </footer>
     </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

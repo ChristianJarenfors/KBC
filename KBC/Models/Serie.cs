@@ -11,7 +11,7 @@ namespace KBC.Models
     {
         [Key]
         public virtual int SerieId { get; set; }
-        public virtual String Name { get; set; }
+        public virtual string Name { get; set; }
         public virtual string Creator { get; set; }
         public virtual DateTime ReleaseDatum { get; set; }
 
@@ -35,26 +35,8 @@ namespace KBC.Models
         public virtual IList<SerieImgURL> SerieImgsURL { get; set; }
         //[ForeignKey("SerieVideoURL")]
         //public virtual IList<int> SerieVideoURLIds { get; set; }
-        public virtual IList<SerieVideoURL> SerieVideoURL { get; set; }
-        public Serie() {
-            //GenreIds = null;
-            //GenreTypes = null;
-            SerieImgsURL = null;
-            SerieVideoURL = null;
-            
-        }
-
-        //if (NumberOfVotes!=0)
-        //{
-        //    float oldscore = NumberOfVotes * AverageGrade;
-        //    oldscore += value;
-        //    NumberOfVotes=NumberOfVotes+1;
-        //    AverageGrade = oldscore / NumberOfVotes;
-        //}
-        //else
-        //{
-        //    AverageGrade = 0;
-        //}
+        //public virtual IList<SerieVideoURL> SerieVideoURL { get; set; }
+        
 
         
     }

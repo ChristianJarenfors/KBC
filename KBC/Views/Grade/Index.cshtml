@@ -1,0 +1,35 @@
+﻿@model IEnumerable<KBC.Models.Serie>
+@using KBC.Models;
+
+<body>
+    <section class="section-grade-serie">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4"></div>                
+                <div class="col-lg-4 col-md-4 col-sm-4" id="grade-box-input">
+                    <center><br /><br />              
+                        <form class="grade-form">
+                            <h1>Make your review</h1>
+                            <fieldset class="form-group">
+                                <label for="inputEmail">1. Email address</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                <small class="text-muted">We'll never share your email with anyone else.</small>
+                            </fieldset>
+                            <label for="forSeriesList">2. Wich serie do you want to grade?</label>
+                            <select class="form-control"></select>
+                            <fieldset class="form-group">
+                                <label for="textInputGrade">3. Max 200 characters:</label>
+                                <textarea class="form-control" id="TextAreaForGrade" rows="7"></textarea>
+                            </fieldset>
+                                    <strong><span>4. Grade </span><p id="CurrentGrade">2.5</p></strong>                                                          
+                                    <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)" /><label for="Grade">5</label>
+                                <br />                                    
+                                 <br />
+                                    <button class="btn btn-lg btn-success" href="#" style="width: 47%; text-transform: uppercase;" type="submit">Grade!</button>                           
+                            </form>
+                        <br />                   
+                    </center>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4"></div>  
+             </div>
+    </section>
+</body>
