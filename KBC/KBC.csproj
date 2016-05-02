@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201604280839356_TEsting.Designer.cs">
       <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605021109403_add isadming bool.cs" />
+    <Compile Include="Migrations\201605021109403_add isadming bool.Designer.cs">
+      <DependentUpon>201605021109403_add isadming bool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\ImgType.cs" />
@@ -202,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604280839356_TEsting.resx">
       <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021109403_add isadming bool.resx">
+      <DependentUpon>201605021109403_add isadming bool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

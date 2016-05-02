@@ -29,6 +29,7 @@ namespace KBC.Models
         public virtual int Age { get; set; }
         public virtual string Country { get; set; }
         public virtual string Gender { get; set; }
+        public virtual bool isAdmin { get; set; }
         public virtual IList<Serie> SeriesFollowed { get; set; }
 
 

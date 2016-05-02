@@ -165,12 +165,14 @@ namespace KBC.Controllers
 
         public ActionResult Logout()
         {
-            if ((bool)Session["UserLoggedIn"] == true)
+            /*if ((bool)Session["UserLoggedIn"] == true)
             {
                 Session["UserLoggedIn"] = false;
                 Session["CurrentUser"] = "";
 
-            }
+            }*/
+
+            Session.Abandon();
 
 
             return Redirect("/Home/Index");
