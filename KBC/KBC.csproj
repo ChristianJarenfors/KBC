@@ -133,17 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604271118599_Test.cs" />
-    <Compile Include="Migrations\201604271118599_Test.Designer.cs">
-      <DependentUpon>201604271118599_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604280741101_Ny Update.cs" />
-    <Compile Include="Migrations\201604280741101_Ny Update.Designer.cs">
-      <DependentUpon>201604280741101_Ny Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604280839356_TEsting.cs" />
-    <Compile Include="Migrations\201604280839356_TEsting.Designer.cs">
-      <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
+    <Compile Include="Migrations\201605021204441_Testing.cs" />
+    <Compile Include="Migrations\201605021204441_Testing.Designer.cs">
+      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201605021109403_add isadming bool.cs" />
     <Compile Include="Migrations\201605021109403_add isadming bool.Designer.cs">
@@ -154,7 +146,6 @@
     <Compile Include="Models\ImgType.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\SerieImgURL.cs" />
-    <Compile Include="Models\SerieVideoURL.cs" />
     <Compile Include="Models\SerieGenre.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Old stuff\Genre.cs" />
@@ -168,7 +159,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Search\SearchResult.cshtml" />
-    <Content Include="Views\Filmprofil\Index.cshtml" />
     <Content Include="Views\SerieProfile\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\EmailExists.cshtml" />
@@ -186,7 +176,6 @@
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Grade\Index.cshtml" />
-    <Content Include="Views\Library\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,16 +186,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\" />
+    <Folder Include="Views\Library\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604271118599_Test.resx">
-      <DependentUpon>201604271118599_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604280741101_Ny Update.resx">
-      <DependentUpon>201604280741101_Ny Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604280839356_TEsting.resx">
-      <DependentUpon>201604280839356_TEsting.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
+      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605021109403_add isadming bool.resx">
       <DependentUpon>201605021109403_add isadming bool.cs</DependentUpon>
