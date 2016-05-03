@@ -1,13 +1,14 @@
-﻿
+﻿@model KBC.Models.Serie
+@using KBC.Models;
 <body>
     <section class="section-serie-profile">
         <div class="jumbotron" id="serie-profile-jumbotron">
             <br />
             <br />
-            <h1 style="color: white;">Kan infoga titel med razor här</h1>
+            <h1 style="color: white;">@Model.Name</h1>
             <a class="btn btn-danger btn-lg" href="~/Home/Index">Back to Genre</a>
         </div>
-        <center><h2 style="color: white;">About the serie!</h2></center>
+        <center><h2 style="color: white;">@Model.Description</h2></center>
 
         @*<span class="label label-default">Action</span>
             <span class="label label-primary">Comedy</span>
@@ -17,7 +18,7 @@
             <span class="label label-info">Drama</span>*@
 
         <div class="col-lg-3 col-md-6 col-sm-6" id="serie-info">
-            <center><img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" /></center>
+            <center><img class="img-responsive" src="@SerieImgURL.GetTheFirstImgOfOneType(Model.SerieImgsURL,0)"/></center>
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-6" id="serie-info-2">
@@ -31,7 +32,7 @@
                         Genre
                     </th>
                     <th>
-                        Actors
+                        Creator
                     </th>
                     <th>
                         Year
@@ -39,6 +40,26 @@
                     <th>
                         Grade
                     </th>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.Name
+                    </td>
+                    <td>
+                        @foreach (var genre in Model.Genres.ToList())
+                        {
+                            <span>@genre.Genre</span><br />
+                        }
+                    </td>
+                    <td>
+                        @Model.Creator
+                    </td>
+                    <td>
+                        @Model.ReleaseDatum
+                    </td>
+                    <td>
+                        @Model.AverageGrade
+                    </td>
                 </tr>
 
                 @* -------Hur en foreach skulle kunna se ut till tabellen------- *@
