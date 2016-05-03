@@ -17,19 +17,18 @@ namespace KBC.Controllers
         // GET: Search
         public ActionResult SearchResult()
         {
-
-            List<Serie> ResultList = new List<Serie>();
+            #region Setting Up Parameters
+            IList<Serie> ResultList = new List<Serie>();
             string textstring = Request["Search"];
-            DateTime From; /* = DateTime.Parse(Request["From"]);*/
-            DateTime.TryParse(Request["From"],out From);
-            DateTime To; /*= DateTime.Parse(Request["To"]);*/
+            DateTime From;
+            DateTime.TryParse(Request["From"], out From);
+            DateTime To;
             DateTime.TryParse(Request["To"], out To);
             double Grade;
-            if (Request["Grade"]!=null)
+            if (Request["Grade"] != null)
             {
                 var culture = CultureInfo.InvariantCulture;
-                Grade = double.Parse(Request["Grade"],culture);
-                //double.TryParse(Request["Grade"], out Grade);
+                Grade = double.Parse(Request["Grade"], culture);
             }
             else
             {
@@ -37,57 +36,48 @@ namespace KBC.Controllers
             }
             List<int> Genres = new List<int>();
             Genres = AddGenres(Genres);
+            List<GenreType> gg = GetGenres(Genres);
+            #endregion
+
             using (SerieContext SC = new SerieContext())
             {
-                //Serie S = new Serie()
-                //{
-
-                //    Name = "Game of Thrones",
-                //    ReleaseDatum = new DateTime(2008, 3, 13, 8, 0, 0),
-                //    AverageGrade = 5,
-                //    NumberOfVotes = 100,
-                //    Description = "While a civil war brews between several noble families in Westeros,"
-                //+ "the children of the former rulers of the land attempt to rise up to power."
-                //+ "Meanwhile a forgotten race, bent on destruction, return after thousands of years in the North."
-                //};
-                //SC.Serie.Add(S);
-                //SC.SaveChanges();
-                //SerieContext.SetUpGenres(new List<int>() { 0, 1, 2, 3, 4 }, S, SC);
-                //SC.Serie.Add(S);
-                ResultList = SeriesBasedOnGenre(Genres, SC);
+                
+                //ResultList = SeriesBasedOnGenre(gg, SC);
+                ResultList = CallesMetod(gg);
                 ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
                 ResultList = SeriesSelectedBasedOnGrade(ResultList, Grade, SC);
                 ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
-                //SerieGenre sg = new SerieGenre { Genre = GenreCollection.};
-                //if (ResultList.Count==0)
-                //{
-                //    ResultList = SC.Serie.ToList();
-                //}
-                //SC.SaveChanges();
+
                 ResultList = ImgListAdded(ResultList, SC);
             }
-            
+
             return View(ResultList);
         }
 
-        private List<Serie> ImgListAdded(List<Serie> List, SerieContext SC)
+        private IList<Serie> ImgListAdded(IList<Serie> List, SerieContext SC)
         {
-            if ((List.Count == 0) || (List == null))
+            //Om Listan är skild från 0 eller null lägg till bilderna
+            if (!(List.Count == 0) || (List == null))
             {
-                List = SC.Serie.ToList();
+
+                foreach (var item in List)
+                {
+                    
+                        item.SerieImgsURL = (from x in item.SerieImgsURL
+                                            where x.SerieId == item.SerieId
+                                             select x).ToList();
+                    
+                    
+                }
+                //List = SC.Serie.ToList();
             }
-            foreach (var item in List)
-            {
-                item.SerieImgsURL = (from x in item.SerieImgsURL
-                                     where x.SerieId == item.SerieId
-                                     select x).ToList();
-            }
+            
             return List;
         }
-
-        private List<Serie> SeriesSelectedBasedOnGrade(List<Serie> List, double v, SerieContext SC)
+        #region Sökmetoder
+        private IList<Serie> SeriesSelectedBasedOnGrade(IList<Serie> List, double v, SerieContext SC)
         {
-            List<Serie> newList;
+            IList<Serie> newList;
             if ((List.Count == 0) || (List == null))
             {
                 List = SC.Serie.ToList();
@@ -98,18 +88,18 @@ namespace KBC.Controllers
             return newList;
         }
 
-        private List<Serie> SeriesSelectedBasedOnTextString(List<Serie> List, string textstring,SerieContext SC)
+        private IList<Serie> SeriesSelectedBasedOnTextString(IList<Serie> List, string textstring, SerieContext SC)
         {
-            List<Serie> newList;
+            IList<Serie> newList;
             if ((List.Count == 0) || (List == null))
             {
                 List = SC.Serie.ToList();
             }
-            if (textstring!=null)
+            if (textstring != null)
             {
                 newList = (from x in List
                            where x.Name.ToLower().Contains(textstring.ToLower()) || x.Description.ToLower().Contains(textstring.ToLower())
-                          
+
                            select x).ToList();
             }
             else
@@ -119,14 +109,14 @@ namespace KBC.Controllers
             return newList;
         }
 
-        private List<Serie> SeriesSelectedBasedOnRelease(List<Serie> List, DateTime From, DateTime to,SerieContext SC)
+        private IList<Serie> SeriesSelectedBasedOnRelease(IList<Serie> List, DateTime From, DateTime to, SerieContext SC)
         {
-            List<Serie> newList;
-            if ((List.Count == 0)||(List==null))
+            IList<Serie> newList;
+            if ((List.Count == 0) || (List == null))
             {
                 List = SC.Serie.ToList();
             }
-            DateTime D = new DateTime(1800, 1, 1,0,0,0);
+            DateTime D = new DateTime(1800, 1, 1, 0, 0, 0);
             if (From > D && to > D)
             {
                 newList = (from x in List
@@ -138,15 +128,67 @@ namespace KBC.Controllers
             {
                 return List;
             }
-            
-            
-        }
 
-        public List<Serie> SeriesBasedOnGenre( List<int> GenreId,SerieContext SC)
+
+        }
+        List<Serie> CallesMetod(List<GenreType> genres)
         {
-            List<Serie> List = new List<Serie>();
-            HashSet < Serie > Kortare = new HashSet<Serie>();
-            foreach (int Genre in GenreId)
+            var animated = Request["Animated"];
+            var action = Request["Action"];
+            var fantasy = Request["Fantasy"];
+
+            var db = new SerieContext();
+
+            var series = new List<Serie>();
+
+            foreach (var serie in db.Serie.ToList())
+            {
+                foreach (var genre in genres)
+                {
+
+
+                    if (serie.Genres.Any(g => g.Genre == genre))
+                    {
+                        if (!series.Any(s => s.SerieId == serie.SerieId))
+                        {
+                            series.Add(serie);
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+            return series;
+        }
+        #endregion
+
+        #region Gammal Metod
+        public IList<Serie> SeriesBasedOnGenre(IList<GenreType> genres, SerieContext SC)
+        {
+            //var series = new List<Serie>();
+
+            //var series = SC.Serie.Where(s => s.Genres.Where(g => g.Genre == ))
+
+            //foreach (var serie in SC.Serie.ToList())
+            //{
+            //    foreach (var genre in genres)
+            //    {
+            //        if (serie.Genres.Any(g => g.Genre == genre))
+            //        {
+            //            series.Add(serie);
+            //        }
+            //    }                
+            //}
+
+
+
+            IList<Serie> List = new List<Serie>();
+            HashSet<Serie> Kortare = new HashSet<Serie>();
+
+            foreach (var Genre in genres)
             {
                 foreach (var item in SC.Genre)
                 {
@@ -154,16 +196,50 @@ namespace KBC.Controllers
                     {
                         using (SerieContext Sc = new SerieContext())
                         {
-                            var s = (from x in Sc.Serie
-                                     where x.SerieId == item.SerieId
-                                     select x).First();
-                            Kortare.Add(s);
-                        } 
+                            var s = (from x in Sc.Serie.ToList()
+                                     where x.Genres.Contains(item)
+                                     select x).ToList();
+                            if (!(s == null))
+                            {
+                                if ((List.Count == 0 || List == null))
+                                {
+                                    List = s;
+                                }
+                                else
+                                {
+                                    List.Union(s);
+                                }
+                            }
+
+
+                            //if (!Kortare.Any(s=>s.SerieId)
+                            //{ Kortare.Add(s); }
+                        }
                     }
                 }
             }
-            List = Kortare.ToList();
+            //foreach (var item in Kortare)
+            //{
+            //    var s = (from x in SC.Serie
+            //             where x.SerieId == item.SerieId
+            //             select x).First();
+            //    List.Add(s);
+            //}
+            //List = Kortare.ToList();
             return List;
+        }
+        #endregion
+
+        #region Genre methods
+        public List<GenreType> GetGenres(List<int> i)
+        {
+            List<GenreType> genres = new List<GenreType>();
+            foreach (var item in i)
+            {
+                genres.Add((GenreType)item);
+            }
+            return genres;
+
         }
         public List<int> AddGenres(List<int> List)
         {
@@ -173,24 +249,20 @@ namespace KBC.Controllers
             }
             return List;
         }
-        public List<int> AddGenre(List<int> List, int Genre) {
-            if (Request[((GenreType)Genre).ToString()]!=null)
+        public List<int> AddGenre(List<int> List, int Genre)
+        {
+
+            if (Request[((GenreType)Genre).ToString()] != null)
             {
                 List.Add(Genre);
             }
             return List;
         }
-        public string RemoveFnuts(string s)
-        {
-            string Value="";
-            foreach (char item in s)
-            {
-                if (item!='"')
-                {
-                    Value=Value + item;
-                }
-            }
-            return Value;
-        }
+
+        #endregion
+
+
+
+
     }
 }
