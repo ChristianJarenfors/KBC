@@ -129,23 +129,29 @@ namespace KBC.Controllers
             string tmpPassword = Request["Password"];
             bool canLogIn = false;
 
-            foreach (var user in context.Users.AsEnumerable())
+
+            if (context.Users.Count() > 0)
             {
 
-                if (tmpUsername.ToLower() == user.Username.ToLower())
+                foreach (var user in context.Users.AsEnumerable())
                 {
-                    if (tmpPassword == user.Password)
+
+                    if (tmpUsername.ToLower() == user.Username.ToLower())
                     {
-                        tmpUsername = user.Username;
-                        canLogIn = true;
-                        break;
-                         
+                        if (tmpPassword == user.Password)
+                        {
+                            tmpUsername = user.Username;
+                            canLogIn = true;
+                            break;
+
+                        }
+
                     }
-                    
+
                 }
 
             }
-
+            
 
             if (canLogIn)
             {
