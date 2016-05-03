@@ -8,7 +8,7 @@ namespace KBC.Models
 {
     public class SerieContext : DbContext
     {
-        public SerieContext() : base("LocalKBC") { }
+        public SerieContext() : base("Webb") { }
         public DbSet<Serie> Serie { get; set; }
         public DbSet<SerieGenre> Genre { get; set; }
         public DbSet<User> Users { get; set; }

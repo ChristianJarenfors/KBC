@@ -14,9 +14,9 @@
     <section class="section-search">
         <div class="container-fluid">
             <form action="/Search/SearchResult" method="post">
-                <input type="text" name="Search" value=@Request["Search"] />
-                <label for="From">Start</label><input type="datetime" name="From" value=@Request["From"] />
-                <label for="To">End</label><input type="datetime" name="To" value=@Request["To"] />
+                <input type="text" name="Search" placeholder="Textsearch" />
+                <label for="From">Start</label><input type="date" name="From" placeholder="yyyy-MM-DD" />
+                <label for="To">End</label><input type="date" name="To" placeholder="yyyy-MM-DD" />
                 
                 <br />
                 @{for (int i = 0; i < 8; i++)
