@@ -133,13 +133,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605021204441_Testing.cs" />
-    <Compile Include="Migrations\201605021204441_Testing.Designer.cs">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605021109403_add isadming bool.cs" />
-    <Compile Include="Migrations\201605021109403_add isadming bool.Designer.cs">
-      <DependentUpon>201605021109403_add isadming bool.cs</DependentUpon>
+    <Compile Include="Migrations\201605031257371_fix migration.cs" />
+    <Compile Include="Migrations\201605031257371_fix migration.Designer.cs">
+      <DependentUpon>201605031257371_fix migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -190,11 +186,8 @@
     <Folder Include="Views\Library\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605021109403_add isadming bool.resx">
-      <DependentUpon>201605021109403_add isadming bool.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605031257371_fix migration.resx">
+      <DependentUpon>201605031257371_fix migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
