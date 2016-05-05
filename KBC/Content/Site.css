@@ -346,6 +346,10 @@ only screen and (max-width: 760px),
     background-size: cover;
 }
 
+.section-search a {
+    color: orange !important;
+}
+
 #SearchItem a {    
     color: white;
     text-decoration: none;
@@ -604,25 +608,27 @@ only screen and (max-width: 760px),
  }
 
 #login-dp{
+    border-radius: 15px;
+    padding: 20px;
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    background-color: black;
 }
 
 #login-dp a {
-    color: black !important;
+    color: white !important;
 }
 
 #login-dp a:hover {
-    color: #336600 !important;    
+    color: orange !important;    
 }
 
 #login-dp .help-block{
     font-size:12px    
 }
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(0, 0, 0, 0.1);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -653,6 +659,7 @@ only screen and (max-width: 760px),
     border-bottom: 1px solid rgba(255,255,255,.3) !important;
     text-transform: uppercase !important;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    /* -----Här byter man bakgrunden till Nav-bar, är de meningen iaf---- */
     background-color: #000000 !important;
 }
 

@@ -6,8 +6,9 @@
 
 <body>   
     <section class="section-search">
-        <div class="container-fluid">
-            <br /><br /><br /><br />
+        <div class="container-fluid">           
+            <h1>Search for series</h1>
+            <br /><br />
             <form action="/Search/SearchResult" method="post">
                 <input type="text" name="Search" placeholder="Textsearch" />
                 <label for="From">Start</label><input type="date" name="From" placeholder="yyyy-MM-DD" />
@@ -23,10 +24,10 @@
                     <br />
                     <span>Grade: </span><p id="CurrentGrade">2.5</p>
                     <br />
-                    <button type="submit">Search...</button>
+                    <button type="submit" class="btn btn-warning">Search...</button>
                 }
             </form>
-            <h2>SearchResult</h2>
+            <h2>Search Result</h2>
             <p>
                 @Html.ActionLink("Create New", "Create")
             </p>
