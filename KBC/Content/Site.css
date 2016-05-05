@@ -317,15 +317,48 @@ only screen and (max-width: 760px),
 /* ------------------------------------------------------ */
 
 .section-search {
+    margin-top: 180px;
     display: table;
     width: 100%;
     height: auto;
     text-align: center;
     color: #ffffff;
-    background: url('content/img/pexels-photo-65128.jpeg') no-repeat bottom center scroll;
+    /*background: url('content/img/pexels-photo-65128.jpeg') no-repeat bottom center scroll;*/
     background-color: #000000;
     background-size: cover;
 }
+
+#SearchItem a {    
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    opacity: 0.8;
+}
+
+#SearchItem a:hover {
+    color: white;
+    /*text-decoration: underline;*/
+    font-size: 140%;
+}
+
+
+/*#btn-genre-fantasy {
+    padding-top: 80px;
+    font-size: 300%;
+    border: none;
+    margin-top: 40px;
+    text-align: center;
+    width: 100%; 
+    height: 250px;
+    background-color: #FF7F00;
+}
+
+#btn-genre-fantasy:hover {   
+    font-size: 400%;
+    background-color: orangered;
+    opacity: 0.8;
+}*/
+
 
 /* ------------------------------------------------------ */
 /* Section First-Page - Startsidan */

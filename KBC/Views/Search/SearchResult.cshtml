@@ -1,17 +1,10 @@
-﻿@model IEnumerable<KBC.Models.Serie>
+@model IEnumerable<KBC.Models.Serie>
 @using KBC.Models;
 @{
     ViewBag.Title = "SearchResult";
 }
 
-<body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+<body>   
     <section class="section-search">
         <div class="container-fluid">
             <form action="/Search/SearchResult" method="post">
@@ -39,11 +32,15 @@
             <div class="container-fluid col-lg-6 col-lg-offset-3">
                 @{ foreach (var item in Model)
                     {
-                        <div class="col-lg-3  text-center" class="btn" id="SearchItem" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))">
-                            <a href="@Url.Action("Index","SerieProfile",new { id = item.SerieId  })"  id="SearchItemText">@item.Name</a>
-                            @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@
-                        </div>
 
+                        <div class="col-lg-3  text-center" id="SearchItem" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))">
+                            <br />
+                            <br />
+                            <br />
+                            @Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })                            
+
+                        </div>
+                        
                     }
                 }
             </div>
