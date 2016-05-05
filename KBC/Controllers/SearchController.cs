@@ -53,6 +53,14 @@ namespace KBC.Controllers
 
             return View(ResultList);
         }
+        public ActionResult GenreSelection(int GenreID)
+        {
+            IList<Serie> ResultList = new List<Serie>();
+            ResultList = CallesMetod(GetGenres(new List<int>() {GenreID }));
+
+
+            return View("SearchResult",ResultList);
+        }
 
         private IList<Serie> ImgListAdded(IList<Serie> List, SerieContext SC)
         {
