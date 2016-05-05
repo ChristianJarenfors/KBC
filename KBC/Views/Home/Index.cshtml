@@ -13,42 +13,115 @@
                     <a href="@Url.Action("SearchResult","Search")" class="btn btn-primary btn-lg" id="Show-All-Btn">Show all Series</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 0 })" class="btn btn-default " id="btn-genre-animated"><span><img src="~/Content/img/glyphicons-339-turtle.png" /></span>Animated</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 0 })" class="btn btn-default " id="btn-genre-animated"><span>@*<img src="~/Content/img/glyphicons-339-turtle.png" />*@</span>Animated</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 2 })" class="btn btn-primary" id="btn-genre-comedy"><span><img src="~/Content/img/glyphicons-301-microphone.png" /></span>Comedy</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 2 })" class="btn btn-primary" id="btn-genre-comedy"><span>@*<img src="~/Content/img/glyphicons-301-microphone.png" />*@</span>Comedy</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 6 })" class="btn btn-warning" id="btn-genre-romance"><span><img src="~/Content/img/glyphicons-13-heart.png"/></span>Romance</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 6 })" class="btn btn-warning" id="btn-genre-romance"><span>@*<img src="~/Content/img/glyphicons-13-heart.png"/>*@</span>Romance</a>
                 </div>
             </div>
 
             @*Andra raden columner*@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 7 })" class="btn btn-success" id="btn-genre-scifi"><span><img src="~/Content/img/glyphicons-777-robot.png" alt="scifi"/></span>Sci-fi</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 7 })" class="btn btn-success" id="btn-genre-scifi"><span>@*<img src="~/Content/img/glyphicons-777-robot.png" alt="scifi"/>*@</span>Sci-fi</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 3 })" class="btn btn-danger" id="btn-genre-drama"><span><img src="~/Content/img/glyphicons-671-theater.png" /></span>Drama</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 3 })" class="btn btn-danger" id="btn-genre-drama"><span>@*<img src="~/Content/img/glyphicons-671-theater.png" />*@</span>Drama</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 4 })" class="btn btn-info" id="btn-genre-fantasy"><span><img src="~/Content/img/glyphicons-323-playing-dices.png" /></span>Fantasy</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 4 })" class="btn btn-info" id="btn-genre-fantasy"><span>@*<img src="~/Content/img/glyphicons-323-playing-dices.png" />*@</span>Fantasy</a>
                 </div>
             </div>
 
             @*Tredje raden columner*@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 8 })" class="btn btn-success" id="btn-genre-thriller"><span><img src="~/Content/img/glyphicons-499-sunglasses.png" /></span>Thriller</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 8 })" class="btn btn-success" id="btn-genre-thriller"><span>@*<img src="~/Content/img/glyphicons-499-sunglasses.png" />*@</span>Thriller</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 5 })" class="btn btn-danger" id="btn-genre-horror"><span><img src="~/Content/img/glyphicons-291-skull.png" /></span>Horror</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 5 })" class="btn btn-danger" id="btn-genre-horror"><span>@*<img src="~/Content/img/glyphicons-291-skull.png" />*@</span>Horror</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 1 })" class="btn btn-info" id="btn-genre-action"><span><img src="~/Content/img/glyphicons-282-bullets.png" /></span>Action</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 1 })" class="btn btn-info" id="btn-genre-action"><span>@*<img src="~/Content/img/glyphicons-282-bullets.png" />*@</span>Action</a>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(new function () {
+
+            //Första tre stycken
+            $("#btn-genre-animated").on('mouseenter', function () {
+                $(".body-content").css({"background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)"});
+            });
+            $("#btn-genre-animated").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-comedy").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-comedy").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-romance").on('mouseenter', function () {
+                $(".body-content").css({"background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)"});
+            });
+            $("#btn-genre-romance").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            
+            //Andra raden, tre stycken
+            $("#btn-genre-scifi").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-scifi").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-drama").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-drama").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-fantasy").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-fantasy").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            //Tredje raden, tre stycken
+            $("#btn-genre-thriller").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-thriller").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-horror").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-horror").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-action").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://i.telegraph.co.uk/multimedia/archive/03597/POTD_chick_3597497k.jpg)" });
+            });
+            $("#btn-genre-action").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+        });
+
+    </script>
 </body>
 </html>

@@ -3,11 +3,6 @@
 /* Innehåll - Contentlayout */
 /* ------------------------------------------------------ */
 
-#serie-cover-grid {
-    color: white;
-}
-
-
 body {
     background-color: black;
     width: 100%;
@@ -99,6 +94,30 @@ h2 {
     font-family: 'Lato', sans-serif !important;    
     /*font-family: 'Aldrich', sans-serif !important;*/
 }
+
+/* ------------------------------------------------------ */
+/* Section - Library */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 230px),
+    (min-device-width: 368px) and (max-device-width: 4024px) {
+
+#library-boxes {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+.section-library {
+    margin-bottom: 800px;
+}
+
+#library-boxes {
+    text-align: center;
+    color: white;
+    padding-bottom: 100px;
+}
+
 
 
 /* ------------------------------------------------------ */
@@ -276,7 +295,6 @@ only screen and (max-width: 760px),
 }
 
 
-
 /* ------------------------------------------------------ */
 /* Section Review/Grade-serie  */
 /* ------------------------------------------------------ */
@@ -328,6 +346,10 @@ only screen and (max-width: 760px),
     background-size: cover;
 }
 
+.section-search a {
+    color: orange !important;
+}
+
 #SearchItem a {    
     color: white;
     text-decoration: none;
@@ -341,6 +363,14 @@ only screen and (max-width: 760px),
     font-size: 140%;
 }
 
+/*@media only screen and (min-width: 230px),
+    (min-device-width: 368px) and (max-device-width: 4024px) {
+
+#library-boxes {
+        width: 300px;
+        height: 400px;
+    }
+}*/
 
 /*#btn-genre-fantasy {
     padding-top: 80px;
@@ -396,7 +426,7 @@ only screen and (max-width: 760px),
 }
 
 #btn-genre-comedy {  
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../Content/img/Season_8_DVD_Cover.jpg');    
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../Content/img/Season_8_DVD_Cover.jpg');*/    
     background-size: cover;   
     padding-top: 80px;
     font-size: 300%;
@@ -537,26 +567,28 @@ only screen and (max-width: 760px),
 #btn-SearchResult {  
     /*background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../Content/img/Season_8_DVD_Cover.jpg');*/    
     background-size: cover;   
-    /*padding-top: 80px;*/
+    padding-top: 80px;
     font-size: 100%;
     border: none;
     margin-top: 40px;
+    vertical-align: central;
     text-align: center;
     width: 100%; 
     height: 150px;
     background-color: #0000FF;
 }
 
-#btn-SearchResult:hover {
-    font-size: 150%;
-    background-color: blue;
-    opacity: 0.8;
+    #btn-SearchResult:hover {
+        font-size: 150%;
+        background-color: blue;
+        opacity: 0.8;
+    }
 
 /* ------------------------------------------------------ */
 /* Section Footer  */
 /* ------------------------------------------------------ */
 
-footer {
+#footer {
     color: white;
     font-size: 200%;
     padding-top: 20px;
@@ -576,25 +608,27 @@ footer {
  }
 
 #login-dp{
+    border-radius: 15px;
+    padding: 20px;
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    background-color: black;
 }
 
 #login-dp a {
-    color: black !important;
+    color: white !important;
 }
 
 #login-dp a:hover {
-    color: #336600 !important;    
+    color: orange !important;    
 }
 
 #login-dp .help-block{
     font-size:12px    
 }
 #login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(0, 0, 0, 0.1);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -619,11 +653,13 @@ footer {
 /* Navigation design - Nav'en i olika format */
 /* ------------------------------------------------------ */
 
+
 .navbar-default {
     margin-bottom: 0 !important;
     border-bottom: 1px solid rgba(255,255,255,.3) !important;
     text-transform: uppercase !important;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    /* -----Här byter man bakgrunden till Nav-bar, är de meningen iaf---- */
     background-color: #000000 !important;
 }
 
@@ -696,10 +732,11 @@ footer {
         border-bottom: 1px solid rgba(255,255,255,.3) !important;
         background: #000000 !important;
     }
+
     #SearchItem {
     height:150px;
-    background-repeat:no-repeat;
-    background-position:center;
+    /*background-repeat:no-repeat;
+    background-position:center;*/
 
     }
     #SearchItemText{

@@ -1,4 +1,8 @@
-﻿
+﻿@model IEnumerable<KBC.Models.Serie>
+@using KBC.Models;
+@{
+    ViewBag.Title = "Index";
+}
 
 
 <body>
@@ -12,64 +16,39 @@
         @*@{
                 if ((bool)Session["admin"])
                 {
-                    @Html.ActionLink("Add new product", "AddNewProduct")  <br /><br />
+                    @Html.ActionLink("Add serie", "AddNewProduct")  <br /><br />
                 }
             }*@
+
         <br />
         <br />
-        <div class="row" id="serie-cover-grid">
-            <center>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <p>Hej och hå</p>
-                    <img class="img-responsive" src="~/Content/img/game-of-thrones.jpg" />
-                </div>
-            </center>
-        </div>
 
         @* ----loopar ut ett item och lägger in den på en rad som vi kan infoga---- *@
-        @*@foreach (var item in Model)
-            {
-                <div class="col-md-4 col-sm-4">
-                    <div id="wrapper">*@
+        @foreach (var item in Model)
+            { 
+                <div class="col-lg-2 col-md-3 col-sm-3" id="library-boxes">
+                    <div id="wrapper">
         @* ----Lägga till bild / URL från databasen.---- *@
-        @*<img src="@item.ImgUrl" class="img-responsive thumbnail" id="hover-pics" style="width:100%" alt="Image">*@
-
+                        <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })">
+                            <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image">
+                        </a>
         @* ----Om vi vill ha namn, skriva ut den här---- *@
-        @*<p class="text">*@ @*@Html.DisplayFor(modelItem => item.ProductName)*@ @*</p>
+        <p class="text"> @Html.DisplayFor(modelItem => item.Name) </p>
+                        <a href="#" class="btn btn-primary">Add to wishlist</a>
+                    </div>
                 </div>
-            </div>*@
+            }
+
         @*@{
                 if ((bool)Session["admin"])
                 {
                     <span>
-                        <a href="@Url.Action("Edit", "product", new { item.ProductID })"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                        <a href="@Url.Action("Edit", "serie", new { item.ProductID })"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                     </span>
                 }
             }*@
-        @*//Knapp som kan lägga till i wishlist*@
-        @*<button class="btn btn-default btn-lg" id="add-to-wishlist-btn">*@ @*@Ajax.ActionLink("Add to wishlist", "AddToCart", "ShoppingCart", new { item.ProductID }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "window.location.reload()" }, new { @class = "add-to-list-hyperlink" })*@@*</button>
-            }*@
-
+        @*//Knapp som kan lägga till i wishlist*@       
+           
     </section>
 </body>
 
