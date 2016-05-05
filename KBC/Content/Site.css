@@ -384,6 +384,10 @@ only screen and (max-width: 760px),
     background-size: cover;
 }
 
+#search-forms {
+    
+}
+
 .section-search a {
     color: orange !important;
 }
