@@ -4,9 +4,9 @@
     ViewBag.Title = "SearchResult";
 }
 
-<body>   
+<body class="search-body">   
     <section class="section-search">
-        <div class="container-fluid">           
+        @*<div class="container-fluid">*@           
             <h1>Search for series</h1>
             <br /><br />
             <form action="/Search/SearchResult" method="post">
@@ -24,29 +24,34 @@
                     <br />
                     <span>Grade: </span><p id="CurrentGrade">2.5</p>
                     <br />
-                    <button type="submit" class="btn btn-warning">Search...</button>
+                    <button type="submit" class="btn btn-warning">Hit me for search!</button>
                 }
             </form>
             <h2>Search Result</h2>
             <p>
                 @Html.ActionLink("Create New", "Create")
             </p>
-            <div class="container-fluid col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1">
+            @* ----Hoppar över en container då det finns i "layout-filen" redan---- *@
+            @*<div class="container-fluid col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1">*@
+
                 @{ foreach (var item in Model)
                     {
 
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 text-center" id="SearchItem">                            
-
-                            @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@                            
+                        @* ----Loopar ut boxar, samma storlekar som i Library---- *@
+                          <div class="col-lg-2 col-md-3 col-sm-3" id="SearchItem">
+                        @*<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 text-center" id="SearchItem">*@                            
+                                                    
                             @*<a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId})" class="btn btn-default " id="SearchItemText">@item.Name</a>*@
                             <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" id="btn-SearchResult" @*style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)"*@>
-                                <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image">
+                                <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image" id="imgBox">
                             </a>
-                            <p>@item.Name </p>                      
+                            <p style="font-size: 17px;">@item.Name </p>                      
                         </div>                    
                     }
                 }
-            </div>
+
+            @*</div>*@
+
             @*<table class="table">
                 <tr>
                     <th>
@@ -100,7 +105,7 @@
                 }
 
             </table>*@
-        </div>
+        @*</div>*@
     </section>
 </body>
 <script>
