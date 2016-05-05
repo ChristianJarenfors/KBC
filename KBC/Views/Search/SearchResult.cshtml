@@ -4,14 +4,7 @@
     ViewBag.Title = "SearchResult";
 }
 
-<body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+<body>   
     <section class="section-search">
         <div class="container-fluid">
             <form action="/Search/SearchResult" method="post">
@@ -40,9 +33,12 @@
                 @{ foreach (var item in Model)
                     {
                         <div class="col-lg-3  text-center" id="SearchItem" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))">
-                            @Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })
+                            <br />
+                            <br />
+                            <br />
+                            @Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })                            
                         </div>
-
+                        
                     }
                 }
             </div>
