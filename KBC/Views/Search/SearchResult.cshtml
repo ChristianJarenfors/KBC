@@ -35,12 +35,12 @@
                     {
 
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 text-center" id="SearchItem">                            
-                            @*<br />
-                            <br />
-                            <br />*@
+
                             @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@                            
                             @*<a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId})" class="btn btn-default " id="SearchItemText">@item.Name</a>*@
-                            <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" class="btn btn-primary" id="btn-SearchResult" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" >@item.Name</a>
+                            <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" id="btn-SearchResult" @*style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)"*@>
+                                <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image">
+                            </a>
                             <p>@item.Name </p>                      
                         </div>                    
                     }

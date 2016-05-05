@@ -29,8 +29,9 @@
                 <div class="col-lg-2 col-md-3 col-sm-3" id="library-boxes">
                     <div id="wrapper">
         @* ----Lägga till bild / URL från databasen.---- *@
-        <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image"><a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })"></a>
-
+                        <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })">
+                            <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image">
+                        </a>
         @* ----Om vi vill ha namn, skriva ut den här---- *@
         <p class="text"> @Html.DisplayFor(modelItem => item.Name) </p>
                         <a href="#" class="btn btn-primary">Add to wishlist</a>
