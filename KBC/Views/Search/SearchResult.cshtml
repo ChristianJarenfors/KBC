@@ -40,7 +40,8 @@
                 @{ foreach (var item in Model)
                     {
                         <div class="col-lg-3  text-center" id="SearchItem" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))">
-                            @Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })
+                            <a href="@Url.Action("Index","SerieProfile",new { id = item.SerieId  })"  id="SearchItemText">@item.Name</a>
+                            @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@
                         </div>
 
                     }

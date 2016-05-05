@@ -658,5 +658,8 @@ footer {
     background-position:center;
 
     }
+    #SearchItemText{
 
+         background-color: #8B00FF;
+    }
 }
