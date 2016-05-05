@@ -30,7 +30,7 @@
                     <div id="wrapper">
         @* ----Lägga till bild / URL från databasen.---- *@
                         <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })">
-                            <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image" id="img-library">
+                            <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" alt="Image" id="img-library">
                         </a>
         @* ----Om vi vill ha namn, skriva ut den här---- *@
         <p class="text" style="font-size: 17px;"> @Html.DisplayFor(modelItem => item.Name) </p>
