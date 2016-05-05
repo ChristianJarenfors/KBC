@@ -10,7 +10,7 @@
             @*<h1>Welcome to SERI(E)IOUS!</h1>*@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <a href="#" class="btn btn-primary btn-lg" id="Show-All-Btn">Show all Series</a>
+                    <a href="@Url.Action("SearchResult","Search")" class="btn btn-primary btn-lg" id="Show-All-Btn">Show all Series</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <a href="@Url.Action("GenreSelection","Search",new {GenreID = 0 })" class="btn btn-default " id="btn-genre-animated"><span><img src="~/Content/img/glyphicons-339-turtle.png" /></span>Animated</a>
