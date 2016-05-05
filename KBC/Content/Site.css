@@ -535,7 +535,7 @@ only screen and (max-width: 760px),
 }
 
 #btn-SearchResult {  
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../Content/img/Season_8_DVD_Cover.jpg');    
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../Content/img/Season_8_DVD_Cover.jpg');*/    
     background-size: cover;   
     /*padding-top: 80px;*/
     font-size: 100%;

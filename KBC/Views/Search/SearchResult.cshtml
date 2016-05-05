@@ -34,13 +34,11 @@
                 @{ foreach (var item in Model)
                     {
 
-                        <div class="col-lg-3  text-center" id="SearchItem" style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))">
-                            <br />
-                            <br />
-                            <br />
+                        <div class="col-lg-3  text-center" id="SearchItem" @*style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0))"*@>
                             @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@                            
                             @*<a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId})" class="btn btn-default " id="SearchItemText">@item.Name</a>*@
-                            <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" class="btn btn-primary" id="btn-SearchResult" >@item.Name</a>                      
+                            <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" class="btn btn-primary" id="btn-SearchResult" style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)">@item.Name</a>                      
                         </div>
                         
                     }
