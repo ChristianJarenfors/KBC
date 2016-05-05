@@ -173,6 +173,7 @@
     <Content Include="Views\Grade\Index.cshtml" />
     <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\SerieProfile\newIndex.cshtml" />
+    <Content Include="Views\Library\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,7 +184,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\" />
-    <Folder Include="Views\Library\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
