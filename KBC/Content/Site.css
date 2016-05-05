@@ -200,6 +200,13 @@ only screen and (max-width: 200px),
     text-align: center;
     color: white;
 }
+/* ------------------------------------------------------ */
+/* Section Library - Serie-biblo  */
+/* ------------------------------------------------------ */
+
+.section-library {
+    overflow-x:hidden;   
+}
 
 /* ------------------------------------------------------ */
 /* Section Help - Support  */
@@ -287,7 +294,8 @@ only screen and (max-width: 200px),
 /* Section Review/Grade-serie  */
 /* ------------------------------------------------------ */
 
-.section-grade-serie {       
+.section-grade-serie {  
+    overflow-x:hidden;     
     margin-top: 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(img/night-television-tv-theme-machines.jpg);
     background-size: cover;
