@@ -1,4 +1,4 @@
-@model IEnumerable<KBC.Models.Serie>
+﻿@model IEnumerable<KBC.Models.Serie>
 @using KBC.Models;
 @{
     ViewBag.Title = "SearchResult";
@@ -7,6 +7,7 @@
 <body>   
     <section class="section-search">
         <div class="container-fluid">
+            <br /><br /><br /><br />
             <form action="/Search/SearchResult" method="post">
                 <input type="text" name="Search" placeholder="Textsearch" />
                 <label for="From">Start</label><input type="date" name="From" placeholder="yyyy-MM-DD" />
@@ -37,8 +38,9 @@
                             <br />
                             <br />
                             <br />
-                            @Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })                            
-
+                            @*@Html.ActionLink(item.Name, "../SerieProfile/Index", new { id = item.SerieId })*@                            
+                            @*<a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId})" class="btn btn-default " id="SearchItemText">@item.Name</a>*@
+                            <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" class="btn btn-primary" id="btn-SearchResult" >@item.Name</a>                      
                         </div>
                         
                     }
