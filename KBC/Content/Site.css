@@ -99,17 +99,17 @@ h2 {
 /* Section - Library */
 /* ------------------------------------------------------ */
 
-@media only screen and (min-width: 230px),
-    (min-device-width: 368px) and (max-device-width: 4024px) {
+.section-library {
+    margin-bottom: 800px;
+}
+
+@media only screen and (min-width: 300px),
+    (min-device-width: 300px) and (max-device-width: 300px) {
 
 #library-boxes {
         width: 300px;
         height: 400px;
     }
-}
-
-.section-library {
-    margin-bottom: 800px;
 }
 
 #library-boxes {
@@ -118,6 +118,11 @@ h2 {
     padding-bottom: 100px;
 }
 
+#img-library:hover {
+    -moz-box-shadow: 0 0 10px #ccc; 
+    -webkit-box-shadow: 0 0 10px #ccc; 
+    box-shadow: 0 0 10px #ccc;
+}
 
 
 /* ------------------------------------------------------ */
@@ -294,6 +299,40 @@ only screen and (max-width: 760px),
     margin-top: 0px;
 }
 
+/* ------------------------------------------------------ */
+/* Section Register  */
+/* ------------------------------------------------------ */
+
+#input-boxes {
+    width: 230px;
+}
+
+#register-box {
+    width: 100%;  
+}
+
+.section-register {
+    height: 600px;
+}
+
+.section-register form {
+    display: inline-block;
+    text-align: center;
+    }
+
+#create-user-btn {
+    width: 100%;
+    /*margin-bottom: 30%;*/
+}
+
+.register {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    height: auto;  
+    margin-top: 200px;
+    color: #fff;
+}
+
 
 /* ------------------------------------------------------ */
 /* Section Review/Grade-serie  */
@@ -338,12 +377,15 @@ only screen and (max-width: 760px),
     margin-top: 180px;
     display: table;
     width: 100%;
-    height: auto;
+    height: 1400px;    
     text-align: center;
     color: #ffffff;
-    /*background: url('content/img/pexels-photo-65128.jpeg') no-repeat bottom center scroll;*/
     background-color: #000000;
     background-size: cover;
+}
+
+#search-forms {
+    
 }
 
 .section-search a {
@@ -363,14 +405,25 @@ only screen and (max-width: 760px),
     font-size: 140%;
 }
 
-/*@media only screen and (min-width: 230px),
-    (min-device-width: 368px) and (max-device-width: 4024px) {
+@media only screen and (min-width: 300px),
+    (min-device-width: 300px) and (max-device-width: 300px) {
 
-#library-boxes {
+#SearchItem {
         width: 300px;
         height: 400px;
     }
+}
+
+/*#imgBox {
+    width: 300px;
+    height: 400px;
 }*/
+
+#imgBox:hover {
+    -moz-box-shadow: 0 0 10px #ccc; 
+    -webkit-box-shadow: 0 0 10px #ccc; 
+    box-shadow: 0 0 10px #ccc;
+}
 
 /*#btn-genre-fantasy {
     padding-top: 80px;
