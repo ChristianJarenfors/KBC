@@ -101,12 +101,48 @@ h2 {
 }
 
 
-
 /* ------------------------------------------------------ */
-/* Section - "Serie-profile  */
+/* Section About Series - Fakta  */
 /* ------------------------------------------------------ */
 
-/*För tabellen när den förminskas*/
+@media 
+only screen and (max-width: 200px),
+(min-device-width: 368px) and (max-device-width: 4024px) {
+
+#about-serie-picture {
+        width: 400px;
+        height: 500px;
+    }
+}
+
+.section-facts {
+    overflow-x:hidden;   
+}
+
+#facts-header {
+    font-size: 40px !important;
+    margin-top: 0px;
+    padding-top: 70px;
+    padding-bottom: 5%;
+}
+
+.section-facts {
+    background-color: black;
+    text-align: center;
+}
+
+#facts-block a {
+    color: orange;
+}
+
+ #facts-block {       
+     height: 420px;
+     margin-bottom: 14%;
+     color: white;
+ }
+
+
+ /*För tabellen när den förminskas*/
 
 @media 
 only screen and (max-width: 760px),
@@ -134,78 +170,29 @@ only screen and (max-width: 760px),
 		border: none;
 		border-bottom: 1px solid #eee; 
 		position: relative;
-		padding-left: 50%; 
+		/*padding-left: 50%;*/ 
 	}
 	
 	td:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
+		/*top: 6px;
+		left: 6px;*/
 		width: 45%; 
 		padding-right: 10px; 
 		white-space: nowrap;
 	}
 }
 
-
-/* Eventuellt för att få nedre delen faded. */
-/*linear-gradient(
-    to bottom,
-    rgba(64, 64, 64, 1) 0%,
-    rgba(64, 64, 64, 0) 10%,
-    rgba(64, 64, 64, 0) 90%,
-    rgba(64, 64, 64, 1) 100%
-);*/
-
 .jumbotron {
     display: table !important;
     width: 100% !important;
-    height: 500px !important;
+    height: 650px !important;
     text-align: center !important;
     background-attachment: fixed;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../Content/img/pexels-photo-65128.jpeg');    
     background-size: cover;   
-}
-
-@media 
-only screen and (max-width: 200px),
-(min-device-width: 368px) and (max-device-width: 4024px) {
-
-#serie-info img {
-        width: 350px;
-        height: 500px;
-    }
-}
-
-#serie-info {   
-   border: none;
-   margin-top: 40px;
-   width: 100%;
-   height: auto;
-}
-
-#serie-info-2 {
-    width: 100%;
-    height: 400px;
-    color: white;
-    margin-bottom: 20px;
-    margin-top: 40px;
-    background-color: #000000;
-}
-
-.review-series-box {
-    background-color: #000;
-    text-align: center;
-    color: white;
-}
-/* ------------------------------------------------------ */
-/* Section Library - Serie-biblo  */
-/* ------------------------------------------------------ */
-
-.section-library {
-    overflow-x:hidden;   
 }
 
 /* ------------------------------------------------------ */

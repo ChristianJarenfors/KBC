@@ -6,61 +6,84 @@
             <br />
             <br />
             <h1 style="color: white;">@Model.Name</h1>
-            <a class="btn btn-danger btn-lg" href="~/Home/Index">Back to Genre</a>
-        </div>
-        <center><h2 style="color: white;">@Model.Description</h2></center>
+            <a class="btn btn-danger btn-lg" href="~/Library/Index">Back to Library</a>
+        </div>       
+        @*<div class="col-lg-12">
+            <div class="col-lg-4 col-md-6 col-sm-6" id="serie-info">
+                <center><img class="img-responsive" src="@SerieImgURL.GetTheFirstImgOfOneType(Model.SerieImgsURL,0)" /></center>
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <center><p style="color: white; font-size: 20px;">@Model.Description</p></center>
+            </div>
+        </div>*@
 
-        @*<span class="label label-default">Action</span>
-            <span class="label label-primary">Comedy</span>
-            <span class="label label-success">Animated</span>
-            <span class="label label-warning">Fantasy</span>
-            <span class="label label-danger">Romance</span>
-            <span class="label label-info">Drama</span>*@
-
-        <div class="col-lg-3 col-md-6 col-sm-6" id="serie-info">
-            <center><img class="img-responsive" src="@SerieImgURL.GetTheFirstImgOfOneType(Model.SerieImgsURL,0)"/></center>
-        </div>
-
-        <div class="col-lg-6 col-md-6 col-sm-6" id="serie-info-2">
-            <br />
-            <table class="table">
-                <tr>
-                    <th>
-                        Title
-                    </th>
-                    <th>
-                        Genre
-                    </th>
-                    <th>
-                        Creator
-                    </th>
-                    <th>
-                        Year
-                    </th>
-                    <th>
-                        Grade
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        @Model.Name
-                    </td>
-                    <td>
-                        @foreach (var genre in Model.Genres.ToList())
-                        {
-                            <span>@genre.Genre</span><br />
-                        }
-                    </td>
-                    <td>
-                        @Model.Creator
-                    </td>
-                    <td>
-                        @Model.ReleaseDatum
-                    </td>
-                    <td>
-                        @Model.AverageGrade
-                    </td>
-                </tr>
+        <section class="section-facts">
+            <div class="col-lg-12">
+                <h1 id="facts-header">About - @Model.Name</h1>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6" id="facts-block">
+                <center><img class="img-responsive" id="about-serie-picture" src="@SerieImgURL.GetTheFirstImgOfOneType(Model.SerieImgsURL,0)" /></center>
+                @*<video>Sätta in en trailer?</video>*@
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6" id="facts-block">               
+                <h2>Information</h2>
+                <p style="color: white; font-size: 23px; text-align: center;">@Model.Description</p>
+                <br />
+                <br />
+                <table class="table">
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Genre
+                        </th>
+                        <th>
+                            Creator
+                        </th>
+                        <th>
+                            Year
+                        </th>
+                        <th>
+                            Grade
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Model.Name
+                        </td>
+                        <td>
+                            @foreach (var genre in Model.Genres.ToList())
+                            {
+                                @genre.Genre<br />
+                            }
+                        </td>
+                        <td>
+                            @Model.Creator
+                        </td>
+                        <td>
+                            @Model.ReleaseDatum
+                        </td>
+                        <td>
+                            @Model.AverageGrade
+                        </td>
+                    </tr>
+                    </table>
+            </div>
+            
+        </section>
+        <section>
+            <div class="col-lg-12">
+                <center><a href="~/Home/Index" class="page-scroll btn btn-primary btn-lg">Back to firstpage</a></center>
+            </div>
+        </section>
 
                 @* -------Hur en foreach skulle kunna se ut till tabellen------- *@
                 @*@foreach (var item in Model)
@@ -90,15 +113,13 @@
                         </tr>
                                     }*@
 
-            </table>
-        </div>
+            @*</table>*@
     </section>
-        <section class="review-series-box">
-            <hr/>
+        @*<section class="review-series-box">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <p>Infoga razorsyntax som skickar in informationen/post som gjorts i databasen. Läs ut det här.</p>
             </div>
-        </section>   
+        </section>*@   
 </body>
 
 
