@@ -294,6 +294,37 @@ only screen and (max-width: 760px),
     margin-top: 0px;
 }
 
+/* ------------------------------------------------------ */
+/* Section Register  */
+/* ------------------------------------------------------ */
+
+#input-boxes {
+    width: 230px;
+}
+
+#register-box {
+    width: 100%;  
+}
+
+.section-register {
+    height: 600px;
+}
+
+.section-register form {
+    display: inline-block;
+    text-align: center;
+    }
+
+#create-user-btn {
+    width: 100%;
+    /*margin-bottom: 30%;*/
+}
+
+.register {  
+    margin-top: 200px;
+    color: #fff;
+}
+
 
 /* ------------------------------------------------------ */
 /* Section Review/Grade-serie  */
