@@ -574,16 +574,17 @@ only screen and (max-width: 760px),
     background-color: #0000FF;
 }
 
-#btn-SearchResult:hover {
-    font-size: 150%;
-    background-color: blue;
-    opacity: 0.8;
+    #btn-SearchResult:hover {
+        font-size: 150%;
+        background-color: blue;
+        opacity: 0.8;
+    }
 
 /* ------------------------------------------------------ */
 /* Section Footer  */
 /* ------------------------------------------------------ */
 
-footer {
+#footer {
     color: white;
     font-size: 200%;
     padding-top: 20px;
@@ -645,6 +646,7 @@ footer {
 /* ------------------------------------------------------ */
 /* Navigation design - Nav'en i olika format */
 /* ------------------------------------------------------ */
+
 
 .navbar-default {
     margin-bottom: 0 !important;
