@@ -241,9 +241,9 @@ only screen and (max-width: 760px),
 
 
 .section-banner-contact-us {
-    padding-bottom: 500px;
+    padding-bottom: 400px;
     width: 100%;
-    height: 100%;
+    height: auto;
     color: #fff;    
     text-align: center !important;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Content/img/people-coffee-tea-meeting.jpg');       
@@ -297,6 +297,7 @@ only screen and (max-width: 760px),
 }
 
  #contact-block {    
+     z-index:10;
      height: 280px;
      margin-bottom: 14%;
      color: white;
