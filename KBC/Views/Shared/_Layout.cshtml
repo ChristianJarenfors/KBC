@@ -92,33 +92,47 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna">Login</a>
-                        <ul id="login-dp" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form class="form" role="form" method="post" action="/User/Login" accept-charset="UTF-8" id="login-nav">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputEmail2">Username</label>
-                                                <input type="text" class="form-control" name="Username" placeholder="Username" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                <input type="password" name="Password" class="form-control" placeholder="Password" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-success btn-block" id="btn-login" style="text-transform: uppercase;">Sign in</button>
-                                            </div>
-                                        </form>
+
+                    @if ((bool)Session["UserLoggedIn"] == false)
+                    {
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="nav-länkarna">Login</a>
+                            <ul id="login-dp" class="dropdown-menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form class="form" role="form" method="post" action="/User/Login" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputEmail2">Username</label>
+                                                    <input type="text" class="form-control" name="Username" placeholder="Username" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                    <input type="password" name="Password" class="form-control" placeholder="Password" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-success btn-block" id="btn-login" style="text-transform: uppercase;">Sign in</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="bottom text-center">
+                                            <a href="~/User/Index" class="btn btn-warning btn-block">Register</a>
+                                        </div>
                                     </div>
-                                    <div class="bottom text-center">
-                                        <a href="~/User/Index" class="btn btn-warning btn-block">Register</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                                </li>
+                            </ul>
+                        </li>
+
+                    }
+                    else
+                    {
+
+                        <li><a href="~/User/Logout" class="btn btn-block">Logout</a></li>
+
+                    }
+
+
 
                 </ul>
             </div>
