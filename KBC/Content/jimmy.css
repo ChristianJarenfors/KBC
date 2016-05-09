@@ -1,5 +1,87 @@
-﻿body {
+﻿/*
+todo: when hovering the .cardcontent class, display "edit profile label"
+      display: none
+      display: block
+*/
+
+.cardcontent {
 }
 
+.cardcontent:hover {
+}
 
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
 
+#usernameheader {
+    font-size: 20px;
+}
+
+#username {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#userlocation {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#userbirthday {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#useremail {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.card {
+    padding-top: 10px;
+    margin: 10px 0 20px 0;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color:#333333;
+
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cardheader {
+    background: url("http://placehold.it/350x150");
+    background-size: cover;
+    height: 135px;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.cardfooter {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.avatar {
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}

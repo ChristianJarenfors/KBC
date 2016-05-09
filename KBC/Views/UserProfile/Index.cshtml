@@ -1,6 +1,13 @@
 ﻿
 @{
+    // Test data
     ViewBag.Title = "title_placeholder";
+    ViewBag.UserName = "John Doe";
+    ViewBag.Age = "55";
+    ViewBag.Gender = "Male";
+    ViewBag.Location = "Sweden";
+    ViewBag.BirthDay = "1990-01-01";
+    ViewBag.Email = "email@kbcseries.com";
 }
 
 <head>
@@ -8,6 +15,38 @@
 </head>
 <body>
 
-    <h6>Welcome: @Session["CurrentUser"]</h6>
+
+    <!--- BEGIN USER MAIN---->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="card">
+                    <div class="cardheader">
+                        some text inside cardheader if desired
+                    </div>
+                    <div class="avatar">
+                        <img alt="useravatar" src="http://placehold.it/140x100">
+                    </div>
+                    <div id="usernameheader">
+                        @ViewBag.UserName
+                    </div>
+
+                    <div class="cardcontent">
+                        <div id="userlocation"><span class="glyphicon glyphicon-map-marker"></span> @ViewBag.Location</div>
+                        <div id="userbirthday"><span class="glyphicon glyphicon-gift"></span> @ViewBag.BirthDay</div>
+                        <div id="useremail"><span class="glyphicon glyphicon-envelope"></span> @ViewBag.Email</div>
+                    </div>
+
+                    <br />
+                    <div class="cardfooter">
+                        some text inside cardfooter if desired
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---END USER MAIN---->
+
+>>>>>>> userprofile
 
 </body>
