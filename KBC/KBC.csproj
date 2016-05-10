@@ -134,13 +134,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605021204441_Testing.cs" />
-    <Compile Include="Migrations\201605021204441_Testing.Designer.cs">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605101349305_Delte.cs" />
-    <Compile Include="Migrations\201605101349305_Delte.Designer.cs">
-      <DependentUpon>201605101349305_Delte.cs</DependentUpon>
+    <Compile Include="Migrations\201605101523356_Databas.cs" />
+    <Compile Include="Migrations\201605101523356_Databas.Designer.cs">
+      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -194,11 +190,8 @@
     <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605101349305_Delte.resx">
-      <DependentUpon>201605101349305_Delte.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605101523356_Databas.resx">
+      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace KBC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Delte : IMigrationMetadata
+    public sealed partial class Databas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Delte));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Databas));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605101349305_Delte"; }
+            get { return "201605101523356_Databas"; }
         }
         
         string IMigrationMetadata.Source
