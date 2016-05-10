@@ -360,7 +360,7 @@ only screen and (max-width: 760px),
 .section-grade-serie {  
     overflow-x:hidden;     
     margin-top: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://static.pexels.com/photos/8158/night-television-tv-theme-machines.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://static.pexels.com/photos/30111/pexels-photo-30111.jpg);
     background-size: cover;
     color: #fff;
 }
