@@ -225,7 +225,7 @@ only screen and (max-width: 760px),
     height: 650px !important;
     text-align: center !important;
     background-attachment: fixed;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../Content/img/pexels-photo-65128.jpeg');    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('https://newyorker1988.files.wordpress.com/2007/12/movie-chair.jpg');    
     background-size: cover;   
 }
 
