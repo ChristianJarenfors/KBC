@@ -22,7 +22,7 @@
     <!--- BEGIN USER MAIN---->
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="card">
                     <div class="cardheader">
                         some text inside cardheader if desired
@@ -42,12 +42,79 @@
 
                     <br />
                     <div class="cardfooter">
-                        some text inside cardfooter if desired
+                        <button type="button" class="label label-default" data-toggle="modal" data-target="#editProfileModal">edit</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!---END USER MAIN---->
+
+
+    <!-- BEGIN EDIT PROFILE MODAL -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="editProfileLabel">Edit Profile</h4>
+                </div>
+
+                <!-- [Edit Username] -->
+                <div class="modal-body">
+                    <form name="form" id="form" class="form-horizontal" action="submit.php" method="post">
+                        <div class="control-group">
+                            <label class="control-label" for="inputName">Username</label>
+                            <div class="controls">
+                                <input type="text" name="name" id="inputName" value="" placeholder="Name" maxlength="75" required="" />
+                            </div>
+                        </div>
+
+                        <!-- [Edit Location] -->
+                        <div class="control-group">
+                            <label class="control-label" for="inputLocation">Location</label>
+                            <div class="controls">
+                                <input type="text" name="location" id="inputLocation" value="" placeholder="Loctaion" maxlength="50" required="" />
+                            </div>
+                        </div>
+
+                        <!-- [Edit Birthday] todo fix format of date-->
+                        <div class="control-group">
+                            <label class="control-label" for="inputBirthday">Birthday</label>
+                            <div class="controls">
+                                <input type="text" name="birthday" id="inputBirthday" value="" placeholder="YY/MM/DD" maxlength="25" required="" />
+                            </div>
+                        </div>
+
+                        <!-- [Edit Email-address] -->
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail">Email</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input type="text" name="email" id="inputEmail" value="" placeholder="Email Address" maxlength="50" required="" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- [SUBMIT / RETURN] -->
+                        <div class="control-group">
+                            <div class="controls">
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Return</button>
+                                    <button type="submit" class="btn btn-success">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END EDIT PROFILE MODAL -->
+
+
+
+
 
 </body>
