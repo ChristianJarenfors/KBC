@@ -8,7 +8,7 @@ namespace KBC.Models
 {
     public class SerieContext : DbContext
     {
-        public SerieContext() : base("Webb") { }
+        public SerieContext() : base("LocalKBC") { }
         public DbSet<Serie> Serie { get; set; }
         public DbSet<SerieGenre> Genre { get; set; }
         public DbSet<User> Users { get; set; }
@@ -18,11 +18,11 @@ namespace KBC.Models
             modelBuilder.Entity<Serie>()
                 .HasMany(s => s.SerieImgsURL)
                 .WithRequired(i => i.Serie)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             modelBuilder.Entity<Serie>()
                 .HasMany(s => s.Genres)
                 .WithRequired(g => g.Serie)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             modelBuilder.Entity<User>()
                 .HasMany(u => u.SeriesFollowed)
                 .WithMany();
@@ -43,6 +43,8 @@ namespace KBC.Models
                 });
             }
         }
+
+        public System.Data.Entity.DbSet<KBC.Models.SerieImgURL> SerieImgURLs { get; set; }
         //public static void SetUpGenres(List<int> GenreToBeAdded, Serie S, SerieContext SC)
         //{
         //    foreach (int Genrenumber in GenreToBeAdded)

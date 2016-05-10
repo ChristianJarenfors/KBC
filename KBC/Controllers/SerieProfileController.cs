@@ -21,5 +21,16 @@ namespace KBC.Controllers
             }
             return View(SC.Serie.First());
         }
+        public ActionResult AddImg(int id)
+        {
+            SerieContext SC = new SerieContext();
+
+            return View(SC.SerieImgURLs.Where(s=>s.SerieId== id).First());
+        }
+        [HttpPost]
+        public ActionResult Index(Serie S)
+        {
+            return View(S);
+        }
     }
 }

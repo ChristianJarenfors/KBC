@@ -16,6 +16,11 @@
             <div class="col-lg-6 col-md-6 col-sm-6" id="facts-block">
                 <center><img class="img-responsive" id="about-serie-picture" src="@SerieImgURL.GetTheFirstImgOfOneType(Model.SerieImgsURL,0)" /></center>
                 @*<video>Sätta in en trailer?</video>*@
+                @if ((string)Session["CurrentUser"] == "Admin")
+                {
+                @Html.ActionLink("AddImg", "AddImg", new { id = Model.SerieId })
+                }
+                
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6" id="facts-block">               
                 <h2>Information</h2>
@@ -48,6 +53,10 @@
                             @foreach (var genre in Model.Genres.ToList())
                             {
                                 @genre.Genre<br />
+                            }
+                            @if ((string)Session["CurrentUser"] == "Admin")
+                            {
+                                @Html.ActionLink("AddGenre", "AddGenre", new { id = Model.SerieId })
                             }
                         </td>
                         <td>

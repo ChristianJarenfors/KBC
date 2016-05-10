@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201605021204441_Testing.Designer.cs">
       <DependentUpon>201605021204441_Testing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605101349305_Delte.cs" />
+    <Compile Include="Migrations\201605101349305_Delte.Designer.cs">
+      <DependentUpon>201605101349305_Delte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\ImgType.cs" />
@@ -169,13 +173,15 @@
     <Content Include="Views\User\UsernameExists.cshtml" />
     <Content Include="Views\User\UsernameTooShort.cshtml" />
     <Content Include="Views\User\WrongLogin.cshtml" />
-    <Content Include="Views\Search\Create.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Grade\Index.cshtml" />
     <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\SerieProfile\newIndex.cshtml" />
     <Content Include="Views\Library\Index.cshtml" />
+    <Content Include="Views\Search\Delete.cshtml" />
+    <Content Include="Views\Search\Edit.cshtml" />
+    <Content Include="Views\Search\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,6 +196,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
       <DependentUpon>201605021204441_Testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605101349305_Delte.resx">
+      <DependentUpon>201605101349305_Delte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
