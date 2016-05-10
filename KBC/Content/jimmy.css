@@ -3,7 +3,10 @@ todo: when hovering the .cardcontent class, display "edit profile label"
       display: none
       display: block
 */
-
+body {
+  text-align:center;
+  padding-top:30px;
+}
 .cardcontent {
 }
 
@@ -85,3 +88,17 @@ todo: when hovering the .cardcontent class, display "edit profile label"
     border-radius: 50%;
     border: 5px solid rgba(255,255,255,0.5);
 }
+
+.btn-file {
+    overflow:hidden;
+    position:relative;
+    vertical-align:middle;
+  }
+  .btn-file>input {
+      position:absolute;
+      top:0;right:0;margin:
+      0;opacity:0;
+      filter:alpha(opacity=0);
+      transform:translate(-300px, 0) scale(4);
+      font-size:12;
+      direction:ltr;cursor:pointer;}
