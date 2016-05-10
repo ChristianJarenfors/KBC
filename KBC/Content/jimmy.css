@@ -3,21 +3,19 @@ todo: when hovering the .cardcontent class, display "edit profile label"
       display: none
       display: block
 */
-body {
-  text-align:center;
+.center {
+    float:none;
+   margin-left:auto;
+   margin-right:auto;
   padding-top:30px;
 }
+
 .cardcontent {
 }
 
 .cardcontent:hover {
 }
 
-.center {
-     float: none;
-     margin-left: auto;
-     margin-right: auto;
-}
 
 #usernameheader {
     font-size: 20px;
