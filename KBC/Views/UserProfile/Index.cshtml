@@ -75,11 +75,11 @@
                     </span>
                     <hr />
                     <!-- [Edit Username] -->
-                    <form name="form" id="form" class="form-horizontal" action="submit.php" method="post">
+                    <form name="form" id="form" class="form-horizontal" action="EditDetails" method="post">
                         <div class="control-group">
                             <label class="control-label" for="inputName">Username</label>
                             <div class="controls">
-                                <input type="text" name="name" id="inputName" value="" placeholder="@Model.Username" maxlength="75" required="" />
+                                <input type="text" name="name" id="inputName" value="" placeholder="@Model.Username" maxlength="75" />
                             </div>
                         </div>
 
@@ -87,15 +87,15 @@
                         <div class="control-group">
                             <label class="control-label" for="inputLocation">Location</label>
                             <div class="controls">
-                                <input type="text" name="location" id="inputLocation" value="" placeholder="@Model.Country" maxlength="50" required="" />
+                                <input type="text" name="location" id="inputLocation" value="" placeholder="@Model.Country" maxlength="50" />
                             </div>
                         </div>
 
                         <!-- [Edit Birthday] todo fix format of date-->
                         <div class="control-group">
-                            <label class="control-label" for="inputBirthday">Birthday</label>
+                            <label class="control-label" for="inputBirthday">Age</label>
                             <div class="controls">
-                                <input type="text" name="birthday" id="inputBirthday" value="" placeholder="@ViewBag.Birthday" maxlength="25" required="" />
+                                <input type="text" name="birthday" id="inputBirthday" value="" placeholder="@Model.Age" maxlength="25" />
                             </div>
                         </div>
 
@@ -104,7 +104,7 @@
                             <label class="control-label" for="inputEmail">Email</label>
                             <div class="controls">
                                 <div class="input-append">
-                                    <input type="text" name="email" id="inputEmail" value="" placeholder="@Model.Email" maxlength="50" required="" />
+                                    <input type="text" name="email" id="inputEmail" value="" placeholder="@Model.Email" maxlength="50" />
                                 </div>
                             </div>
                         </div>

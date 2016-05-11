@@ -136,12 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605031257371_fix migration.cs" />
-    <Compile Include="Migrations\201605031257371_fix migration.Designer.cs">
-      <DependentUpon>201605031257371_fix migration.cs</DependentUpon>
-    <Compile Include="Migrations\201605101523356_Databas.cs" />
-    <Compile Include="Migrations\201605101523356_Databas.Designer.cs">
-      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
+    <Compile Include="Migrations\201605110901019_SOME SHIT ERROR.cs" />
+    <Compile Include="Migrations\201605110901019_SOME SHIT ERROR.Designer.cs">
+      <DependentUpon>201605110901019_SOME SHIT ERROR.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -183,6 +180,7 @@
     <Content Include="Views\Search\Delete.cshtml" />
     <Content Include="Views\Search\Edit.cshtml" />
     <Content Include="Views\Search\Create.cshtml" />
+    <Content Include="Views\User\NotBornYet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,10 +192,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605031257371_fix migration.resx">
-      <DependentUpon>201605031257371_fix migration.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\201605101523356_Databas.resx">
-      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605110901019_SOME SHIT ERROR.resx">
+      <DependentUpon>201605110901019_SOME SHIT ERROR.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace KBC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Databas : IMigrationMetadata
+    public sealed partial class SOMESHITERROR : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Databas));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SOMESHITERROR));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605101523356_Databas"; }
+            get { return "201605110901019_SOME SHIT ERROR"; }
         }
         
         string IMigrationMetadata.Source

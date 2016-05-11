@@ -26,8 +26,12 @@ namespace KBC.Controllers
             string tmpUsername = Request["usernameInput"];
             string tmpEmail = Request["emailInput"];
             string tmpPassword = Request["passwordInput"];
+            DateTime tmpBirthday = DateTime.Parse(Request["birthdayInput"]);
             string tmpPasswordRetype = Request["passwordInputRetype"];
             string checkChars = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
+
+            
 
             if (string.IsNullOrWhiteSpace(tmpUsername) || string.IsNullOrWhiteSpace(tmpEmail) || string.IsNullOrWhiteSpace(tmpPassword))
             {
@@ -98,10 +102,29 @@ namespace KBC.Controllers
 
             }
 
+            if (tmpBirthday > DateTime.Now)
+            {
+
+                return Redirect("/User/NotBornYet");
+            }
+
 
             if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
             {
                 User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
+
+                DateTime zeroTime = new DateTime(1, 1, 1);
+
+                DateTime a = tmpBirthday;
+                DateTime b = DateTime.Now;
+
+                TimeSpan span = b - a;
+                // because we start at year 1 for the Gregorian 
+                // calendar, we must subtract a year here.
+                int years = (zeroTime + span).Year - 1;
+
+                userToAdd.Age = years;
+
                 Session["UserLoggedIn"] = true;
                 Session["CurrentUser"] = tmpUsername;
 
