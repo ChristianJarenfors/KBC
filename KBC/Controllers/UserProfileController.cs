@@ -46,7 +46,6 @@ namespace KBC.Controllers
                     Session["CurrentUser"] = tmpUsername;
 
                 }
-                
 
             }
 
@@ -72,7 +71,7 @@ namespace KBC.Controllers
 
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
 
         }
 

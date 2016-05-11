@@ -136,9 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605110901019_SOME SHIT ERROR.cs" />
-    <Compile Include="Migrations\201605110901019_SOME SHIT ERROR.Designer.cs">
-      <DependentUpon>201605110901019_SOME SHIT ERROR.cs</DependentUpon>
+    <Compile Include="Migrations\201605110950241_HEJSAN.cs" />
+    <Compile Include="Migrations\201605110950241_HEJSAN.Designer.cs">
+      <DependentUpon>201605110950241_HEJSAN.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -192,8 +192,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605110901019_SOME SHIT ERROR.resx">
-      <DependentUpon>201605110901019_SOME SHIT ERROR.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605110950241_HEJSAN.resx">
+      <DependentUpon>201605110950241_HEJSAN.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
