@@ -43,7 +43,8 @@ todo: when hovering the .cardcontent class, display "edit profile label"
 /*
 todo: fix margin to auto and elements should always be centered
 */
-.card {
+.card {    
+    width: 100%;
     margin-left: -5px;
     margin-right: 10px;
     padding-top: 10px;

@@ -104,9 +104,28 @@ h2 {
 }
 
 .user-profile-body {
+    overflow-x: hidden;
+    padding-top: 100px;
     background-color: black;
     height: 100%;
 }
+
+.centerBlock {
+                width: 500px;
+                height: auto;
+                display: table;
+                margin: 0 auto;
+            }
+
+/*@media 
+only screen and (max-width: 500px),
+(min-device-width: 368px) and (max-device-width: 4024px) {
+
+#about-serie-picture {
+        width: 300px;
+        height: 400px;
+    }
+}*/
 
 /* ------------------------------------------------------ */
 /* Section - Library */
