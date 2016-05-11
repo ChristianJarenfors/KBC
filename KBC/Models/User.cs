@@ -14,7 +14,7 @@ namespace KBC.Models
             Password = "qwerty";
             Age = 0;
             Email = "johndoe@kbcseries.com";
-            Country = "Sweden";
+            Country = "";
         }
         public User(string username, string password, string email, int age)
         {
