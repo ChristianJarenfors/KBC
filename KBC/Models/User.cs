@@ -12,12 +12,14 @@ namespace KBC.Models
         {
             Username = "John Doe";
             Password = "qwerty";
+            Age = 0;
             Email = "johndoe@kbcseries.com";
             Country = "Sweden";
         }
-        public User(string username, string password, string email)
+        public User(string username, string password, string email, int age)
         {
             this.Username = username;
+            this.Age = age;
             this.Password = password;
             this.Email = email;
         }
