@@ -1,12 +1,14 @@
-﻿
+﻿@model KBC.Models.User
+@using KBC.Models;
+
 @{
-    // Test data
-    ViewBag.Title = "title_placeholder";
-    ViewBag.UserName = "John Doe";
-    ViewBag.Gender = "Male";
-    ViewBag.Location = "Sweden";
-    ViewBag.BirthDay = "1990-01-01";
-    ViewBag.Email = "email@kbcseries.com";
+//// Test data
+//ViewBag.Title = "title_placeholder";
+//ViewBag.UserName = "John Doe";
+//ViewBag.Gender = "Male";
+//ViewBag.Location = "Sweden";
+//ViewBag.BirthDay = "1990-01-01";
+//ViewBag.Email = "email@kbcseries.com";
 }
 
 <head>
@@ -30,7 +32,7 @@
                         <img alt="useravatar" src="http://placehold.it/140x100">
                     </div>
                     <div id="usernameheader">
-                        @ViewBag.UserName
+                        @Model.Username
                     </div>
 
                     <div class="cardcontent">

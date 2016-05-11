@@ -10,17 +10,18 @@ namespace KBC.Models
 
         public User()
         {
-
+            Username = "John Doe";
+            Password = "qwerty";
+            Email = "johndoe@kbcseries.com";
+            Country = "Sweden";
         }
-
         public User(string username, string password, string email)
         {
             this.Username = username;
             this.Password = password;
             this.Email = email;
-
         }
-
+       
         public virtual int Id { get; set; }
         public virtual string Username { get; set; }
         public virtual string Password { get; set; }
