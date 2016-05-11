@@ -96,12 +96,44 @@ h2 {
 }
 
 /* ------------------------------------------------------ */
+/* Section - UserProfile */
+/* ------------------------------------------------------ */
+
+#user-profile-containter {
+    padding-bottom: 300px;
+}
+
+.user-profile-body {
+    overflow-x: hidden;
+    padding-top: 100px;
+    background-color: black;
+    height: 100%;
+}
+
+.centerBlock {
+                width: 350px;
+                height: 275px;
+                display: table;
+                margin: 0 auto;
+            }
+
+/*@media 
+only screen and (max-width: 500px),
+(min-device-width: 368px) and (max-device-width: 4024px) {
+
+#about-serie-picture {
+        width: 300px;
+        height: 400px;
+    }
+}*/
+
+/* ------------------------------------------------------ */
 /* Section - Library */
 /* ------------------------------------------------------ */
 
 .section-library {
     width: 100%;
-    height: 1700px;
+    height: 2200px;
     margin-top: 5%;
     /*margin-bottom: 800px;*/
 }
