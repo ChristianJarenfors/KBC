@@ -111,8 +111,8 @@ h2 {
 }
 
 .centerBlock {
-                width: 400px;
-                height: auto;
+                width: 350px;
+                height: 275px;
                 display: table;
                 margin: 0 auto;
             }
