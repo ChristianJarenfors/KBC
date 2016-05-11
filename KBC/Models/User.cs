@@ -19,9 +19,9 @@ namespace KBC.Models
         public User(string username, string password, string email, int age)
         {
             this.Username = username;
+            this.Age = age;
             this.Password = password;
             this.Email = email;
-            this.Age = age;
         }
        
         public virtual int Id { get; set; }
