@@ -1,12 +1,13 @@
-﻿
+﻿@model KBC.Models.User
+@using KBC.Models;
 @{
-    // Test data
-    ViewBag.Title = "title_placeholder";
-    ViewBag.UserName = "John Doe";
-    ViewBag.Gender = "Male";
-    ViewBag.Location = "Sweden";
-    ViewBag.BirthDay = "1990-01-01";
-    ViewBag.Email = "email@kbcseries.com";
+    //// Test data
+    //ViewBag.Title = "title_placeholder";
+    //ViewBag.UserName = "John Doe";
+    //ViewBag.Gender = "Male";
+    //ViewBag.Location = "Sweden";
+    //ViewBag.BirthDay = "1990-01-01";
+    //ViewBag.Email = "email@kbcseries.com";
 }
 
 <head>
@@ -30,13 +31,13 @@
                         <img alt="useravatar" src="http://placehold.it/140x100">
                     </div>
                     <div id="usernameheader">
-                        @ViewBag.UserName
+                        @Model.Username
                     </div>
 
                     <div class="cardcontent">
-                        <div id="userlocation"><span class="glyphicon glyphicon-map-marker"></span> @ViewBag.Location</div>
-                        <div id="userbirthday"><span class="glyphicon glyphicon-gift"></span> @ViewBag.BirthDay</div>
-                        <div id="useremail"><span class="glyphicon glyphicon-envelope"></span> @ViewBag.Email</div>
+                        <div id="userlocation"><span class="glyphicon glyphicon-map-marker"></span> @Model.Country</div>
+                        <div id="userbirthday"><span class="glyphicon glyphicon-gift"></span> @Model.Age</div>
+                        <div id="useremail"><span class="glyphicon glyphicon-envelope"></span> @Model.Email</div>
                     </div>
 
                     <br />
@@ -78,7 +79,7 @@
                         <div class="control-group">
                             <label class="control-label" for="inputName">Username</label>
                             <div class="controls">
-                                <input type="text" name="name" id="inputName" value="" placeholder="@ViewBag.UserName" maxlength="75" required="" />
+                                <input type="text" name="name" id="inputName" value="" placeholder="@Model.Username" maxlength="75" required="" />
                             </div>
                         </div>
 
@@ -86,7 +87,7 @@
                         <div class="control-group">
                             <label class="control-label" for="inputLocation">Location</label>
                             <div class="controls">
-                                <input type="text" name="location" id="inputLocation" value="" placeholder="@ViewBag.Location" maxlength="50" required="" />
+                                <input type="text" name="location" id="inputLocation" value="" placeholder="@Model.Country" maxlength="50" required="" />
                             </div>
                         </div>
 
@@ -103,7 +104,7 @@
                             <label class="control-label" for="inputEmail">Email</label>
                             <div class="controls">
                                 <div class="input-append">
-                                    <input type="text" name="email" id="inputEmail" value="" placeholder="@ViewBag.Email" maxlength="50" required="" />
+                                    <input type="text" name="email" id="inputEmail" value="" placeholder="@Model.Email" maxlength="50" required="" />
                                 </div>
                             </div>
                         </div>
