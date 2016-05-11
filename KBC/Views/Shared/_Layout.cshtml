@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/jimmy.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
 
     <title>KBC - Home of series!</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/jimmy.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
 
     @* ----Javascript----- *@
@@ -24,12 +25,24 @@
     @* ----Fonts----- *@
     <link href='https://fonts.googleapis.com/css?family=Play:400,700|Shadows+Into+Light|Architects+Daughter|Bangers|Orbitron:400,700|Aldrich|Press+Start+2P' rel='stylesheet' type='text/css'>
 
+    @* ----Javascript----- *@
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/grayscale.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+
+
+
+    @* ----Fonts----- *@
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
 </head>
 
 <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <!-- Texten och knapp för att komma till toppen. -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,64 +51,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>                
-                    <!-- Länk till förstasidan, kan lägga en bra ikon här -->
-                    <a class="navbar-brand" href="~/Home/Index">KBC</a>  
-                <form action="/Search/SearchResult" method="post" id="nav-search" class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" name="Search" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>             
+                </button>
+
+                <!-- Länk till förstasidan, kan lägga en bra ikon här -->
+                <a class="navbar-brand" href="~/Home/Index">KBC</a>
             </div>
 
             <!-- Lista med nav länkarna -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                
+            <div class="collapse navbar-collapse navbar-right">
+
                 <ul class="nav navbar-nav">
 
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-
-                    @if ((bool)Session["UserLoggedIn"] == true)
-                    {
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@Session["CurrentUser"]<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="/User/Logout">Logout</a></li>
-                            </ul>
-                        </li>
-
-                    }
-
-                    <li>
-                        <a href="~/Search/SearchResult" id="nav-länkarna">Search</a>
-                    </li>
+                    
                     <li>
                         <a href="~/Library/Index" id="nav-länkarna">Library</a>
                     </li>
 
-                    <!-- ------------- Dropdown Login och dropdown profil ----------------------- -->                   
+                    <!-- ------------- Dropdown Login och dropdown profil ----------------------- -->
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="nav-länkarna">Profil<span class="caret"></span></a>
                         <!-- ------------- Här ändrar du färg på bakgrunden på dropdown ----------------------- -->
                         <ul class="dropdown-menu" role="menu" id="login-dp">
-                            <li><a href="~/SerieProfile/Index">Serie Info</a></li>
-                            <li><a href="#">Tip a friend</a></li>
+                            <li><a href="~/Search/SearchResult" id="nav-länkarna">Search</a></li>
+                            @*<li><a href="~/SerieProfile/Index">Serie Info</a></li>*@                            
                             <li><a href="~/Help/Index">Support</a></li>
                             <li class="divider"></li>
                             <li><a href="~/Grade/Index">Create review</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">To my profile</a></li>
+                            <li><a href="~/UserProfile/Index">To my profile</a></li>
                             <br />
                         </ul>
-                    </li>    
-                    
+                    </li>
+
                     @if ((bool)Session["UserLoggedIn"] == false)
                     {
 
@@ -115,12 +107,16 @@
                                                     <input type="password" name="Password" class="form-control" placeholder="Password" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-success btn-block" id="btn-login">Sign in</button>
+
+                                                    <button type="submit" class="btn btn-success btn-block" id="btn-login" style="text-transform: uppercase;">Sign in</button>
+
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="bottom text-center">
-                                            <a href="~/User/Index"><button class="btn btn-primary btn-block">Register</button></a>
+
+                                            <a href="~/User/Index" class="btn btn-warning btn-block">Register</a>
+
                                         </div>
                                     </div>
                                 </li>
@@ -128,12 +124,30 @@
                         </li>
 
                     }
-                                                 
+                    else
+                    {
+
+                        <li><a href="~/User/Logout" id="nav-länkarna">Logout</a></li>
+
+                    }
+
+					
                 </ul>
             </div>
-        </div>
-    </nav>
+                <div class="collapse navbar-collapse navbar-left">
 
+                    <form action="/Search/SearchResult" method="post" id="nav-search" class="navbar-form" role="search">
+                        <div class="form-group">
+                            <input type="text" name="Search" class="form-control" placeholder="Search">
+                        </div>
+                                <button type="submit" class="btn btn-warning">Submit</button>
+                    </form>
+                    
+                </div>
+            
+
+        </nav>
+    </div>
 
 
 
@@ -143,7 +157,7 @@
         <br />
         <br />
         <hr />
-        <footer>
+        <footer id="footer">
             <center><p>&copy; @DateTime.Now.Year - KBC series!</p></center>
         </footer>
     </div>

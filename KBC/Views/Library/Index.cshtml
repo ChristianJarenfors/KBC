@@ -1,0 +1,54 @@
+﻿@model IEnumerable<KBC.Models.Serie>
+@using KBC.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<body>
+    <section class="section-library">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>Library</h1>
+
+        @*@{
+                if ((bool)Session["admin"])
+                {
+                    @Html.ActionLink("Add serie", "AddNewProduct")  <br /><br />
+                }
+            }*@
+
+        <br />
+        <br />
+
+        @* ----loopar ut ett item och lägger in den på en rad som vi kan infoga---- *@
+        @foreach (var item in Model)
+            { 
+                <div class="col-lg-2 col-md-3 col-sm-3" id="library-boxes">
+                    <div id="wrapper">
+        @* ----Lägga till bild / URL från databasen.---- *@
+                        <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })">
+                            <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" alt="Image" id="img-library">
+                        </a>
+        @* ----Om vi vill ha namn, skriva ut den här---- *@
+        <p class="text" style="font-size: 17px;"> @Html.DisplayFor(modelItem => item.Name) </p>
+                        <a href="#" class="btn btn-primary">Add to wishlist</a>
+                    </div>
+                </div>
+            }
+
+        @*@{
+                if ((bool)Session["admin"])
+                {
+                    <span>
+                        <a href="@Url.Action("Edit", "serie", new { item.ProductID })"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                    </span>
+                }
+            }*@
+        @*//Knapp som kan lägga till i wishlist*@       
+           
+    </section>
+</body>
+

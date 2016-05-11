@@ -10,9 +10,63 @@ namespace KBC.Controllers
 {
     public class SearchController : Controller
     {
+        public ActionResult Delete(int id)
+        {
+            SerieContext SC = new SerieContext();
+            Serie theSerie;
+            if (Request["Radera"] ==null)
+            {
+                theSerie = SC.Serie.ToList().Where(s => s.SerieId == id).First();
+                return View(theSerie);
+            }
+            else
+            {
+                int number = int.Parse(Request["Radera"]);
+                theSerie = SC.Serie.ToList().Where(s => s.SerieId == number).First();
+                SC.Serie.Remove(theSerie);
+                SC.SaveChanges();
+                return View("SearchResult",SC.Serie.ToList());
+            }
+          
+           
+        }
+        [HttpPost]
+        public ActionResult Edit(Serie S)
+        {
+            SerieContext SC = new SerieContext();
+            foreach (var item in SC.Serie)
+            {
+                if(item.SerieId==S.SerieId)
+                {
+                    item.Name = S.Name;
+                    item.NumberOfVotes = S.NumberOfVotes;
+                    item.ReleaseDatum = S.ReleaseDatum;
+                    item.Creator = S.Creator;
+                    item.Description = S.Description;
+                    item.AverageGrade = S.AverageGrade;
+                }
+            }
+            SC.SaveChanges();
+            return View("SearchResult", SC.Serie.ToList());
+        }
+        public ActionResult Edit(int id )
+        {
+            SerieContext SC = new SerieContext();
+            var theSerie = SC.Serie.ToList().Where(s => s.SerieId == id).First();
+            return View(theSerie);
+        }
         public ActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Serie S)
+        {
+            SerieContext SC = new SerieContext();
+            SC.Serie.Add(S);
+            SC.SaveChanges();
+
+            return RedirectToAction("SearchResult");
         }
         // GET: Search
         public ActionResult SearchResult()
@@ -41,17 +95,25 @@ namespace KBC.Controllers
 
             using (SerieContext SC = new SerieContext())
             {
-                
+
                 //ResultList = SeriesBasedOnGenre(gg, SC);
                 ResultList = CallesMetod(gg);
-                ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To,SC);
+                ResultList = SeriesSelectedBasedOnRelease(ResultList, From, To, SC);
                 ResultList = SeriesSelectedBasedOnGrade(ResultList, Grade, SC);
-                ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring,SC);
+                ResultList = SeriesSelectedBasedOnTextString(ResultList, textstring, SC);
 
                 ResultList = ImgListAdded(ResultList, SC);
             }
 
             return View(ResultList);
+        }
+        public ActionResult GenreSelection(int GenreID)
+        {
+            IList<Serie> ResultList = new List<Serie>();
+            ResultList = CallesMetod(GetGenres(new List<int>() { GenreID }));
+
+
+            return View("SearchResult", ResultList);
         }
 
         private IList<Serie> ImgListAdded(IList<Serie> List, SerieContext SC)
@@ -62,16 +124,16 @@ namespace KBC.Controllers
 
                 foreach (var item in List)
                 {
-                    
-                        item.SerieImgsURL = (from x in item.SerieImgsURL
-                                            where x.SerieId == item.SerieId
-                                             select x).ToList();
-                    
-                    
+
+                    item.SerieImgsURL = (from x in item.SerieImgsURL
+                                         where x.SerieId == item.SerieId
+                                         select x).ToList();
+
+
                 }
                 //List = SC.Serie.ToList();
             }
-            
+
             return List;
         }
         #region Sökmetoder

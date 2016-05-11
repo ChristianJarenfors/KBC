@@ -1,5 +1,111 @@
-﻿body {
+﻿/*
+todo: when hovering the .cardcontent class, display "edit profile label"
+      display: none
+      display: block
+*/
+.center {
+    float: none;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:30px;
 }
 
+.cardcontent {
+}
+
+.cardcontent:hover {
+}
+
+#usernameheader {
+    font-size: 20px;
+}
+
+#username {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#userlocation {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#userbirthday {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#useremail {
+    font-size: 12px;
+    font-style: italic;
+}
+
+/*
+todo: fix margin to auto and elements should always be centered
+*/
+.card {
+    margin-left: -5px;
+    margin-right: 10px;
+    padding-top: 10px;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color:#333333;
 
 
+    padding-top: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cardheader {
+    background: #58a;
+    background-image: repeating-linear-gradient(30deg,
+                        hsla(0,0%,100%, .1),
+                        hsla(0,0%,100%, .1) 15px,
+                        transparent 0, transparent 30px);
+    height: 135px;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.cardfooter {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.avatar {
+    position: relative;
+    top: -60px;
+    margin-bottom: -50px;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+}
+
+.btn-file {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .btn-file>input {
+      position:absolute;
+      margin:0; 
+      opacity:0;
+      filter:alpha(opacity=0);
+      transform:translate(-300px, 0) scale(4);
+      font-size: 12px;
+      direction: ltr;
+      cursor: pointer;
+  }

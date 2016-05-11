@@ -3,45 +3,86 @@
 @{
     ViewBag.Title = "SearchResult";
 }
-<body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+
+<body class="search-body">
     <section class="section-search">
-        <div class="container-fluid">
-            <form action="/Search/SearchResult" method="post">
-                <input type="text" name="Search" placeholder="Textsearch" />
-                <label for="From">Start</label><input type="date" name="From" placeholder="yyyy-MM-DD" />
-                <label for="To">End</label><input type="date" name="To" placeholder="yyyy-MM-DD" />
-                
-                <br />
-                @{for (int i = 0; i < 8; i++)
+        @*<div class="container-fluid">*@
+        <h1>Search for series</h1>
+        <br /><br />
+        <hr />
+        <br />
+
+        @* &nbsp; är ett tecken för att göra lite extra mellanrum *@
+
+        <form action="/Search/SearchResult" method="post" id="search-forms">
+            <label>Search &nbsp;</label><input type="text" name="Search" placeholder="Textsearch" />
+            <label for="From">Start &nbsp;</label><input type="date" name="From" placeholder="yyyy-MM-DD" />
+            <label for="To">End &nbsp;</label><input type="date" name="To" placeholder="yyyy-MM-DD" />
+            <br />
+            <br />
+            @{for (int i = 0; i < 8; i++)
             {
-                        <input type="checkbox" name=@((GenreType)i) value=@i /><label for=@((GenreType)i)>@((GenreType)i)</label>
-                    }
+                    <input type="checkbox" name=@((GenreType)i) value=@i /><label for=@((GenreType)i)> @((GenreType)i) &nbsp;</label>
+                }
+                <br />
                     <br />
-                    <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)"  /><label for="Grade">5</label>
+                    <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)" /><label for="Grade">5</label>
                     <br />
                     <span>Grade: </span><p id="CurrentGrade">2.5</p>
                     <br />
-                    <button type="submit">Search...</button>
-                }
-            </form>
-            <h2>SearchResult</h2>
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-            <table class="table">
+                    <button type="submit" class="btn btn-success">Hit me for search!</button>
+            }
+
+        </form>
+        <div>
+            @if ((string)Session["CurrentUser"] == "Admin")
+            {
+                @Html.ActionLink("Create", "Create")
+            }
+        </div>
+        <br />
+        <hr />
+        <h2 > Search Result </h2 >
+        <br />
+        <br />
+        @* ----Hoppar över en container då det finns i "layout-filen" redan---- *@
+        @*<div class="container-fluid col-lg-6 col-lg-offset-3 col-sm-10 col-sm-offset-1">*@
+        @{ foreach (var item in Model)
+            {
+
+                @* ----Loopar ut boxar, samma storlekar som i Library---- *@
+                <div class="col-lg-2 col-md-3 col-sm-3" id="SearchItem">
+                    @*<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 text-center" id="SearchItem">*@
+
+                    @*<a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId})" class="btn btn-default " id="SearchItemText">@item.Name</a>*@
+                    <a href="@Url.Action("Index","SerieProfile",new {id = item.SerieId })" id="btn-SearchResult" @*style="background-image:url(@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)"*@>
+                        <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" class="img-responsive" style="width:100%" alt="Image" id="imgBox">
+                    </a>
+                    <p style="font-size: 17px;">@item.Name </p>
+                    @if ((string)Session["CurrentUser"] == "Admin")
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SerieId })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SerieId })
+                    }
+                </div>
+            }
+        }
+
+        @*</div>*@
+
+        @*<table class="table">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Name)
                     </th>
                     <th>
+                        @Html.DisplayNameFor(model => model.Creator)
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.ReleaseDatum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.NumberOfVotes)
@@ -49,12 +90,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.AverageGrade)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </th>
-                    <th>
-                    <th>@Html.DisplayNameFor(model => model.SerieImgsURL)</th>
+                    <th></th>
                 </tr>
+
                 @foreach (var item in Model)
                 {
                     <tr>
@@ -62,7 +100,13 @@
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
                         <td>
+                            @Html.DisplayFor(modelItem => item.Creator)
+                        </td>
+                        <td>
                             @Html.DisplayFor(modelItem => item.ReleaseDatum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.NumberOfVotes)
@@ -71,20 +115,15 @@
                             @Html.DisplayFor(modelItem => item.AverageGrade)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
-                        <td>
-                                <img src="@SerieImgURL.GetTheFirstImgOfOneType(item.SerieImgsURL,0)" alt="Alternate Text" /> 
-                        </td>
-                        <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.SerieId }) |
                             @Html.ActionLink("Details", "Details", new { id = item.SerieId }) |
                             @Html.ActionLink("Delete", "Delete", new { id = item.SerieId })
                         </td>
                     </tr>
                 }
-            </table>
-        </div>
+
+            </table>*@
+        @*</div>*@
     </section>
 </body>
 <script>

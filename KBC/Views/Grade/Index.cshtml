@@ -11,16 +11,28 @@
                             <h1>Make your review</h1>
                             <fieldset class="form-group">
                                 <label for="inputEmail">1. Email address</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email" required>
                                 <small class="text-muted">We'll never share your email with anyone else.</small>
                             </fieldset>
                             <label for="forSeriesList">2. Wich serie do you want to grade?</label>
-                            <select class="form-control"></select>
+                            <select class="form-control" required>
+                                <option>Game of Thrones</option>
+                                <option>Barbie</option>
+                                <option>Nitin gone Wild</option>
+                                <option>Calle sensei</option>
+                                <option>David kollar</option>
+                                <option>Lassie</option>
+                                <option>Breaking Bad</option>
+                                <option>The 100</option>
+                                <option>The Dome</option>
+                                <option>Family Guy</option>
+                            </select>
                             <fieldset class="form-group">
                                 <label for="textInputGrade">3. Max 200 characters:</label>
-                                <textarea class="form-control" id="TextAreaForGrade" rows="7"></textarea>
+                                <textarea class="form-control" id="TextAreaForGrade" rows="7" required></textarea>
                             </fieldset>
-                                    <strong><span>4. Grade </span><p id="CurrentGrade">2.5</p></strong>                                                          
+                                    <strong><span>4. Grade </span><p id="CurrentGrade">2.5</p></strong>  
+                                                                                           
                                     <label for="Grade"> 0</label><input name="Grade" id="Grade" type="range" min="0" max="5" step="0.1" oninput="showVal(this.value)" onchange="showVal(this.value)" /><label for="Grade">5</label>
                                 <br />                                    
                                  <br />
@@ -33,3 +45,9 @@
              </div>
     </section>
 </body>
+
+<script>
+    function showVal(newVal) {
+        document.getElementById("CurrentGrade").innerHTML = newVal;
+    }   
+</script>

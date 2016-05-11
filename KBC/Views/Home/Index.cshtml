@@ -12,45 +12,118 @@
             @*<h1>Welcome to SERI(E)IOUS!</h1>*@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <a href="#" class="btn btn-primary btn-lg" id="Show-All-Btn">Show all Series</a>
+                    <a href="@Url.Action("SearchResult","Search")" class="btn btn-primary btn-lg" id="Show-All-Btn">Show all Series</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-default " id="btn-genre-animated"><span><img src="~/Content/img/glyphicons-339-turtle.png" /></span>Animated</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 0 })" class="btn btn-default " id="btn-genre-animated"><span>@*<img src="~/Content/img/glyphicons-339-turtle.png" />*@</span>Animated</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-primary" id="btn-genre-comedy"><span><img src="~/Content/img/glyphicons-301-microphone.png" /></span>Comedy</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 2 })" class="btn btn-primary" id="btn-genre-comedy"><span>@*<img src="~/Content/img/glyphicons-301-microphone.png" />*@</span>Comedy</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-warning" id="btn-genre-romance"><span><img src="~/Content/img/glyphicons-13-heart.png"/></span>Romance</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 6 })" class="btn btn-warning" id="btn-genre-romance"><span>@*<img src="~/Content/img/glyphicons-13-heart.png"/>*@</span>Romance</a>
                 </div>
             </div>
 
             @*Andra raden columner*@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-success" id="btn-genre-scifi"><span><img src="~/Content/img/glyphicons-777-robot.png" alt="scifi"/></span>Sci-fi</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 7 })" class="btn btn-success" id="btn-genre-scifi"><span>@*<img src="~/Content/img/glyphicons-777-robot.png" alt="scifi"/>*@</span>Sci-fi</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-danger" id="btn-genre-drama"><span><img src="~/Content/img/glyphicons-671-theater.png" /></span>Drama</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 3 })" class="btn btn-danger" id="btn-genre-drama"><span>@*<img src="~/Content/img/glyphicons-671-theater.png" />*@</span>Drama</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-info" id="btn-genre-fantasy"><span><img src="~/Content/img/glyphicons-323-playing-dices.png" /></span>Fantasy</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 4 })" class="btn btn-info" id="btn-genre-fantasy"><span>@*<img src="~/Content/img/glyphicons-323-playing-dices.png" />*@</span>Fantasy</a>
                 </div>
             </div>
 
             @*Tredje raden columner*@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-success" id="btn-genre-thriller"><span><img src="~/Content/img/glyphicons-499-sunglasses.png" /></span>Thriller</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 8 })" class="btn btn-success" id="btn-genre-thriller"><span>@*<img src="~/Content/img/glyphicons-499-sunglasses.png" />*@</span>Thriller</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-danger" id="btn-genre-horror"><span><img src="~/Content/img/glyphicons-291-skull.png" /></span>Horror</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 5 })" class="btn btn-danger" id="btn-genre-horror"><span>@*<img src="~/Content/img/glyphicons-291-skull.png" />*@</span>Horror</a>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn btn-info" id="btn-genre-action"><span><img src="~/Content/img/glyphicons-282-bullets.png" /></span>Action</a>
+                    <a href="@Url.Action("GenreSelection","Search",new {GenreID = 1 })" class="btn btn-info" id="btn-genre-action"><span>@*<img src="~/Content/img/glyphicons-282-bullets.png" />*@</span>Action</a>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(new function () {
+
+            //Första tre stycken
+            $("#btn-genre-animated").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(https://images8.alphacoders.com/546/546902.jpg)" });
+            });
+            $("#btn-genre-animated").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-comedy").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(https://wallpaperscraft.com/image/friends_series_tv_show_actors_friendship_people_2014_1920x1200.jpg)" });
+            });
+            $("#btn-genre-comedy").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-romance").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://rl.roncalli.nu/bestseries/wp-content/uploads/sites/112/2015/11/f0d13ff9abb19cc502eeaa4583b5c8a0_large1.jpg)" });
+            });
+            $("#btn-genre-romance").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            
+            //Andra raden, tre stycken
+            $("#btn-genre-scifi").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://hyuuji.com/blog/wp-content/uploads/2011/03/2be5p2.jpg)" });
+            });
+            $("#btn-genre-scifi").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            //http://cdn.paper4pc.com/images/house-of-cards-political-drama-series-10-wallpaper-1.jpg //House of Cards
+            $("#btn-genre-drama").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://www.borongaja.com/data_images/out/5/594637-breaking-bad-american-tv-series.jpg)" });
+            });
+            $("#btn-genre-drama").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-fantasy").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(http://www.aumethodists.org/wp-content/uploads/2013/09/game-of-thrones-season-4-1.jpg)" });
+            });
+            $("#btn-genre-fantasy").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            //Tredje raden, tre stycken
+            $("#btn-genre-thriller").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(https://alleyesonscreen.files.wordpress.com/2015/01/24-live-another-day.jpg)" });
+            });
+            $("#btn-genre-thriller").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+            $("#btn-genre-horror").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url(https://manofsvensatra.files.wordpress.com/2015/10/f72e7812e9751e632456f7cf1333b71b_large.jpeg)" });
+            });
+            $("#btn-genre-horror").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+            //http://cdn-static.denofgeek.com/sites/denofgeek/files/2015/12/agents_of_shield_season_3-1920x1200.jpg
+            $("#btn-genre-action").on('mouseenter', function () {
+                $(".body-content").css({ "background-image": "url('../Content/img/agents_of_shield_season_3-1920x1200.jpg')" });
+            }); 
+            $("#btn-genre-action").on('mouseleave', function () {
+                $(".body-content").css({ 'background-color': "black", 'background-image': "none" });
+            });
+
+        });
+    </script>
 </body>
 </html>

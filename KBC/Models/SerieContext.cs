@@ -20,11 +20,11 @@ namespace KBC.Models
             modelBuilder.Entity<Serie>()
                 .HasMany(s => s.SerieImgsURL)
                 .WithRequired(i => i.Serie)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             modelBuilder.Entity<Serie>()
                 .HasMany(s => s.Genres)
                 .WithRequired(g => g.Serie)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             modelBuilder.Entity<User>()
                 .HasMany(u => u.SeriesFollowed)
                 .WithMany();
@@ -45,6 +45,8 @@ namespace KBC.Models
                 });
             }
         }
+
+        public System.Data.Entity.DbSet<KBC.Models.SerieImgURL> SerieImgURLs { get; set; }
         //public static void SetUpGenres(List<int> GenreToBeAdded, Serie S, SerieContext SC)
         //{
         //    foreach (int Genrenumber in GenreToBeAdded)
