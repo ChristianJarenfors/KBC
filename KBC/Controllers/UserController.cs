@@ -25,6 +25,8 @@ namespace KBC.Controllers
             List<User> users = new List<User>();
             string tmpUsername = Request["usernameInput"];
             string tmpEmail = Request["emailInput"];
+            int tmpAge;
+            int.TryParse(Request["ageInput"],out tmpAge);
             string tmpPassword = Request["passwordInput"];
             string tmpPasswordRetype = Request["passwordInputRetype"];
             string checkChars = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
@@ -101,7 +103,7 @@ namespace KBC.Controllers
 
             if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
             {
-                User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
+                User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail, tmpAge);
                 Session["UserLoggedIn"] = true;
                 Session["CurrentUser"] = tmpUsername;
 
