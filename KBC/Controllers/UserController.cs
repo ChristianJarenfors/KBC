@@ -25,6 +25,8 @@ namespace KBC.Controllers
             List<User> users = new List<User>();
             string tmpUsername = Request["usernameInput"];
             string tmpEmail = Request["emailInput"];
+            int tmpAge;
+            int.TryParse(Request["ageInput"],out tmpAge);
             string tmpPassword = Request["passwordInput"];
             DateTime tmpBirthday = DateTime.Parse(Request["birthdayInput"]);
             string tmpPasswordRetype = Request["passwordInputRetype"];
@@ -111,8 +113,6 @@ namespace KBC.Controllers
 
             if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
             {
-                User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
-
                 DateTime zeroTime = new DateTime(1, 1, 1);
 
                 DateTime a = tmpBirthday;
@@ -122,8 +122,8 @@ namespace KBC.Controllers
                 // because we start at year 1 for the Gregorian 
                 // calendar, we must subtract a year here.
                 int years = (zeroTime + span).Year - 1;
-
-                userToAdd.Age = years;
+				
+				User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail, years);
 
                 Session["UserLoggedIn"] = true;
                 Session["CurrentUser"] = tmpUsername;

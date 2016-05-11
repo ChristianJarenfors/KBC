@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,12 +12,14 @@ namespace KBC.Models
         {
             Username = "John Doe";
             Password = "qwerty";
+            Age = 0;
             Email = "johndoe@kbcseries.com";
-            Country = "Sweden";
+            Country = "";
         }
-        public User(string username, string password, string email)
+        public User(string username, string password, string email, int age)
         {
             this.Username = username;
+            this.Age = age;
             this.Password = password;
             this.Email = email;
         }
@@ -30,7 +32,6 @@ namespace KBC.Models
         public virtual int Age { get; set; }
         public virtual string Country { get; set; }
         public virtual string Gender { get; set; }
-        public virtual bool isAdmin { get; set; }
         public virtual IList<Serie> SeriesFollowed { get; set; }
 
 

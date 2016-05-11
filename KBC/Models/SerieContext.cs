@@ -8,9 +8,8 @@ namespace KBC.Models
 {
     public class SerieContext : DbContext
     {
-        public SerieContext() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LocalKBC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False") { }
-		
 
+        public SerieContext() : base("LocalKBC") { }
         public DbSet<Serie> Serie { get; set; }
         public DbSet<SerieGenre> Genre { get; set; }
         public DbSet<User> Users { get; set; }
