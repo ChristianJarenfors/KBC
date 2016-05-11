@@ -99,18 +99,18 @@ namespace KBC.Controllers
             }
 
 
-            if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
-            {
-                User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
-                Session["UserLoggedIn"] = true;
-                Session["CurrentUser"] = tmpUsername;
+            //if (tmpUsername.Trim().Length >= 3 && tmpPassword.Trim().Length >= 6)
+            //{
+            //    User userToAdd = new User(tmpUsername, tmpPassword, tmpEmail);
+            //    Session["UserLoggedIn"] = true;
+            //    Session["CurrentUser"] = tmpUsername;
 
-                context.Users.Add(userToAdd);
-                context.SaveChanges();
+            //    context.Users.Add(userToAdd);
+            //    context.SaveChanges();
 
 
-                return Redirect("/User/RegisterSuccess");
-            }
+            //    return Redirect("/User/RegisterSuccess");
+            //}
 
 
             return Redirect("/User/RegisterError");
