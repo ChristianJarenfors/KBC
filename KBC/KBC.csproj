@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\agents_of_shield_season_3-1920x1200.jpg" />
     <Content Include="Content\jimmy.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -102,6 +103,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\KilledByTheCredits.pubxml" />
+    <None Include="Properties\PublishProfiles\TincanUser.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -133,9 +135,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605021204441_Testing.cs" />
-    <Compile Include="Migrations\201605021204441_Testing.Designer.cs">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
+    <Compile Include="Migrations\201605101523356_Databas.cs" />
+    <Compile Include="Migrations\201605101523356_Databas.Designer.cs">
+      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -168,13 +170,15 @@
     <Content Include="Views\User\UsernameExists.cshtml" />
     <Content Include="Views\User\UsernameTooShort.cshtml" />
     <Content Include="Views\User\WrongLogin.cshtml" />
-    <Content Include="Views\Search\Create.cshtml" />
     <Content Include="Views\UserProfile\Index.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Grade\Index.cshtml" />
     <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\SerieProfile\newIndex.cshtml" />
     <Content Include="Views\Library\Index.cshtml" />
+    <Content Include="Views\Search\Delete.cshtml" />
+    <Content Include="Views\Search\Edit.cshtml" />
+    <Content Include="Views\Search\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,11 +188,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605021204441_Testing.resx">
-      <DependentUpon>201605021204441_Testing.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605101523356_Databas.resx">
+      <DependentUpon>201605101523356_Databas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

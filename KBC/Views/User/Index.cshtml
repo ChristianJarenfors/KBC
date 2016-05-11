@@ -1,41 +1,47 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-
+﻿
 <body class="register">
-    <section class="section-register">
-        <div class="form-horizontal text-center" id="register-box">
-            <h2>Registration</h2>
+    <section class="section-register">        
+        <center>
+            @*<br />
             <br />
-            <form class="form-group" action="Register" method="post">
-                <div class="form-group">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <label>Username:</label><br />
-                        <input type="text" name="usernameInput" placeholder="Min 3 characters" id="input-boxes" required />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />*@
+            <div class="text-center" id="register-box">
+                <h2>Registration</h2>
+                <br />
+                <form class="form-group" action="Register" method="post">
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label>Username:</label><br />
+                            <input type="text" name="usernameInput" placeholder="Min 3 characters" id="input-boxes" required />
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <label>Email:</label><br />
-                        <input type="text" name="emailInput" placeholder="Example@Example.com" id="input-boxes" required/>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label>Email:</label><br />
+                            <input type="text" name="emailInput" placeholder="Example@Example.com" id="input-boxes" required />
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <label>Password:</label><br />
-                        <input type="password" name="passwordInput" placeholder="Min 6 characters" id="input-boxes" required/>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label>Password:</label><br />
+                            <input type="password" name="passwordInput" placeholder="Min 6 characters" id="input-boxes" required />
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-md-10 col-sm-10">
-                        <label>Retype Password:</label><br />
-                        <input type="password" name="passwordInputRetype" placeholder="Retype password" id="input-boxes" required/>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label>Retype Password:</label><br />
+                            <input type="password" name="passwordInputRetype" placeholder="Retype password" id="input-boxes" required />
+                        </div>
                     </div>
-                </div>                
                     <br />
                     <input type="submit" class="btn btn-success" id="create-user-btn" value="Register" />
-            </form>
-            <br />
-        </div>
+                </form>
+                <br />
+            </div>
+        </center>
     </section>
 </body>
